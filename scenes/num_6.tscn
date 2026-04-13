@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bma64np87p7qe"]
+
+[ext_resource type="Texture2D" uid="uid://lhbtdiyasrr" path="res://numbers/block_numbers_gb_10.png" id="1_yje0e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp7n2"]
+atlas = ExtResource("1_yje0e")
+region = Rect2(48, 0, 7, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp2tq"]
+size = Vector2(8, 14)
+
+[node name="num2" type="Area2D" unique_id=1733220363]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117607953]
+texture = SubResource("AtlasTexture_gp7n2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552277847]
+shape = SubResource("RectangleShape2D_kp2tq")

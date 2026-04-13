@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dkmbm7aev6o8f"]
+
+[ext_resource type="Script" uid="uid://ctq7noknhjj0j" path="res://scenes/nuvem_menu.gd" id="1_d4ihe"]
+[ext_resource type="Texture2D" uid="uid://bcxo5ju41vywl" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="1_mvf0l"]
+[ext_resource type="Texture2D" uid="uid://demk8mctc074f" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="2_d4ihe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqrxm"]
+atlas = ExtResource("1_mvf0l")
+region = Rect2(0, 0, 133, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px3rc"]
+atlas = ExtResource("2_d4ihe")
+region = Rect2(0, 0, 140, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mkry2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqrxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px3rc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_3a8fu"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ns4gr"]
+resource_name = "horizontal"
+length = 2.5333333
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3a8fu"]
+_data = {
+&"RESET": SubResource("Animation_3a8fu"),
+&"horizontal": SubResource("Animation_ns4gr")
+}
+
+[node name="Nuvem" type="Node2D" unique_id=1226984404]
+script = ExtResource("1_d4ihe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1089080663]
+z_as_relative = false
+scale = Vector2(0.65571827, 0.64675564)
+sprite_frames = SubResource("SpriteFrames_mkry2")
+autoplay = "default"
+frame_progress = 0.36129677
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=664635255]
+libraries/ = SubResource("AnimationLibrary_3a8fu")
+autoplay = &"horizontal"

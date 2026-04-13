@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://125oxv0wko3v"]
+
+[ext_resource type="Texture2D" uid="uid://dwbgc8kq8y00k" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 01.png" id="1_gottu"]
+[ext_resource type="Texture2D" uid="uid://txqmc1uhs75f" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 02.png" id="2_a08uq"]
+[ext_resource type="Texture2D" uid="uid://bd7aalfvis4dr" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 03.png" id="3_mwrlm"]
+[ext_resource type="Texture2D" uid="uid://d2km2jl3kin4w" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 04.png" id="4_g3mcn"]
+[ext_resource type="Texture2D" uid="uid://dvnbf4gpc2dn7" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 05.png" id="5_fb2jl"]
+[ext_resource type="Texture2D" uid="uid://hlrniii4wam2" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 06.png" id="6_38xpo"]
+[ext_resource type="Texture2D" uid="uid://3t3eq4r1m85e" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 07.png" id="7_dg0p0"]
+[ext_resource type="Texture2D" uid="uid://brbedqnmd37mn" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 08.png" id="8_5j1mn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76kwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gottu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a08uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mwrlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g3mcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fb2jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_38xpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dg0p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5j1mn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbm5q"]
+radius = 11.0
+height = 22.0
+
+[node name="ninja" type="StaticBody2D" unique_id=144220718]
+scale = Vector2(-0.5199967, 0.560002)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=149409858]
+sprite_frames = SubResource("SpriteFrames_76kwv")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.65096676
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1504246879]
+visible = false
+position = Vector2(1, 3)
+shape = SubResource("CapsuleShape2D_cbm5q")

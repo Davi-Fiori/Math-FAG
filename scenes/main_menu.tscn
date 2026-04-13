@@ -1,0 +1,297 @@
+[gd_scene format=4 uid="uid://dl1atudlt7ol4"]
+
+[ext_resource type="AudioStream" uid="uid://4tbd3j5r37cm" path="res://musicas/menu.ogg" id="1_8egab"]
+[ext_resource type="PackedScene" uid="uid://dkmbm7aev6o8f" path="res://scenes/nuvem_menu.tscn" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://dg2hxikngg75e" path="res://scenes/main_menu.gd" id="1_svtp6"]
+[ext_resource type="AudioStream" uid="uid://m6s8ruvs87rs" path="res://musicas/botao.ogg" id="2_svtp6"]
+[ext_resource type="Texture2D" uid="uid://dt640rrb3vpdj" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/Green Board (guide).png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://c182vdyk4j784" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/1.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://c8cb2o4fe28os" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/3.png" id="4_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://bj1adek823umg" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/9.png" id="5_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://dbp6shkg7b5id" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/7.png" id="6_oa1go"]
+[ext_resource type="Texture2D" uid="uid://dnehn03be1xbi" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Banner/1.png" id="7_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://bvmuf30fl0nvc" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Banner/13.png" id="8_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://dy0s10uggkdar" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Banner/2.png" id="9_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://d3p60g2ogch2r" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/13.png" id="10_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://dyl8ql0dng5f" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/1.png" id="11_7b55j"]
+[ext_resource type="Texture2D" uid="uid://c4pb1en7l4ywj" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/20.png" id="12_5pajh"]
+[ext_resource type="Texture2D" uid="uid://i6tanrrqhg51" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/8.png" id="13_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://qsvdf7de7atf" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/6.png" id="14_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://dcw7vujsnshk5" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/7.png" id="15_hstxw"]
+[ext_resource type="Texture2D" uid="uid://bnoulkny1mkyp" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Button/New Project.png" id="16_5pajh"]
+[ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="23_vr8o3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oa1go"]
+texture = ExtResource("2_wu84c")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbmy8"]
+texture = ExtResource("3_8ln24")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jk1qb"]
+texture = ExtResource("4_rtw2f")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dd4i"]
+texture = ExtResource("5_rtw2f")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgwnu"]
+texture = ExtResource("6_oa1go")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flqon"]
+texture = ExtResource("7_jk1qb")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcqid"]
+texture = ExtResource("8_5dd4i")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ajci"]
+texture = ExtResource("9_lgwnu")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5dd4i"]
+sources/0 = SubResource("TileSetAtlasSource_oa1go")
+sources/1 = SubResource("TileSetAtlasSource_tbmy8")
+sources/2 = SubResource("TileSetAtlasSource_jk1qb")
+sources/3 = SubResource("TileSetAtlasSource_5dd4i")
+sources/4 = SubResource("TileSetAtlasSource_lgwnu")
+sources/5 = SubResource("TileSetAtlasSource_flqon")
+sources/6 = SubResource("TileSetAtlasSource_rcqid")
+sources/7 = SubResource("TileSetAtlasSource_1ajci")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8egab"]
+font_size = 67
+outline_size = 4
+
+[node name="MainMenu" type="Control" unique_id=218770627]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 1.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_svtp6")
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=2073240174]
+stream = ExtResource("1_8egab")
+volume_db = -9.123
+autoplay = true
+
+[node name="SomBotao" type="AudioStreamPlayer" parent="." unique_id=367491996]
+stream = ExtResource("2_svtp6")
+volume_db = 17.333
+
+[node name="FundoAzul" type="ColorRect" parent="." unique_id=312039996]
+self_modulate = Color(0.9691369, 0.9691369, 0.9691368, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.33428845, 0.70393544, 0.85791636, 1)
+
+[node name="Nuvems" type="Node" parent="." unique_id=435682286]
+
+[node name="Nuvem" parent="Nuvems" unique_id=1226984404 instance=ExtResource("1_l6cm7")]
+show_behind_parent = true
+position = Vector2(201.99998, 533)
+scale = Vector2(4.52, 4.52)
+
+[node name="Nuvem4" parent="Nuvems" unique_id=483122829 instance=ExtResource("1_l6cm7")]
+show_behind_parent = true
+position = Vector2(678, 382)
+scale = Vector2(4.52, 4.52)
+
+[node name="Nuvem2" parent="Nuvems" unique_id=1063371393 instance=ExtResource("1_l6cm7")]
+show_behind_parent = true
+position = Vector2(424.99997, 100.99999)
+scale = Vector2(4.52, 4.52)
+
+[node name="Nuvem3" parent="Nuvems" unique_id=426790760 instance=ExtResource("1_l6cm7")]
+show_behind_parent = true
+position = Vector2(1121.9999, 495)
+scale = Vector2(4.52, 4.52)
+
+[node name="Nuvem5" parent="Nuvems" unique_id=1213088971 instance=ExtResource("1_l6cm7")]
+show_behind_parent = true
+position = Vector2(1364, 231)
+scale = Vector2(4.52, 4.52)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1978063670]
+z_index = 1
+position = Vector2(-790, -573.99994)
+scale = Vector2(4.17, 4.17)
+tile_map_data = PackedByteArray("AAAQAAoAAQAAAAAAAAARAAoAAQABAAAAAAASAAoAAQABAAAAAAATAAoAAQABAAAAAAAUAAoAAQABAAAAAAAVAAoAAQABAAAAAAAWAAoAAQABAAAAAAAXAAoAAgAAAAAAAAAYAAoAAgABAAAAAAAYAAsAAgABAAEAAAAQAAsAAQAAAAEAAAAQAAwAAQAAAAEAAAAQAA0AAQAAAAEAAAAYAAwAAgABAAEAAAAXAAsAAgAAAAEAAAAWAAsAAgAAAAEAAAAVAAsAAgAAAAEAAAAUAAsAAgAAAAEAAAATAAsAAgAAAAEAAAASAAsAAgAAAAEAAAARAAsAAgAAAAEAAAARAAwAAgAAAAEAAAASAAwAAgAAAAEAAAATAAwAAgAAAAEAAAAUAAwAAgAAAAEAAAAVAAwAAgAAAAEAAAAWAAwAAgAAAAEAAAAXAAwAAgAAAAEAAAAXAA0AAgAAAAEAAAAWAA0AAgAAAAEAAAAVAA0AAgAAAAEAAAAUAA0AAgAAAAEAAAATAA0AAgAAAAEAAAASAA0AAgAAAAEAAAARAA0AAgAAAAEAAAAYAA0AAgABAAEAAAAYAA4AAwABAAAAAAAYAA8AAwABAAAAAAAYABAAAwABAAEAAAAXABAAAwAAAAEAAAAWABAAAwAAAAEAAAAVABAAAwAAAAEAAAAUABAAAwAAAAEAAAATABAAAwAAAAEAAAASABAAAwAAAAEAAAARABAAAwAAAAEAAAAQABAABAAAAAEAAAAQAA8ABAAAAAAAAAAQAA4ABAAAAAAAAAARAA4ABAABAAAAAAARAA8ABAABAAAAAAASAA8ABAABAAAAAAASAA4ABAABAAAAAAATAA8ABAABAAAAAAATAA4ABAABAAAAAAAUAA8ABAABAAAAAAAUAA4ABAABAAAAAAAVAA4ABAABAAAAAAAVAA8ABAABAAAAAAAWAA4ABAABAAAAAAAWAA8ABAABAAAAAAAXAA4ABAABAAAAAAAXAA8ABAABAAAAAAA=")
+tile_set = SubResource("TileSet_5dd4i")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=923237548]
+z_index = 1
+position = Vector2(-1361.0001, -944)
+scale = Vector2(6.375, 6.375)
+tile_map_data = PackedByteArray("AAAPAAoABQAAAAAAAAAPAAsABQAAAAEAAAAQAAoABQABAAAAAAAQAAsABQABAAEAAAARAAoABgAAAAAAAAARAAsABgAAAAEAAAASAAoABgABAAAAAAASAAsABgABAAEAAAATAAoABgAAAAAAAAATAAsABgAAAAEAAAAUAAoABgABAAAAAAAUAAsABgABAAEAAAAWAAoABwABAAAAAAAWAAsABwABAAEAAAAVAAoABwAAAAAAAAAVAAsABwAAAAEAAAA=")
+tile_set = SubResource("TileSet_5dd4i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=213713164]
+z_index = 2
+layout_mode = 0
+offset_left = 352.0
+offset_top = 145.0
+offset_right = 415.0
+offset_bottom = 185.0
+scale = Vector2(7.9199996, 1.3199987)
+theme_override_constants/separation = 3
+
+[node name="TextureButton" type="TextureRect" parent="HBoxContainer" unique_id=926126923]
+layout_mode = 2
+texture = ExtResource("10_5dd4i")
+
+[node name="TextureButton2" type="TextureRect" parent="HBoxContainer" unique_id=2112349518]
+layout_mode = 2
+texture = ExtResource("11_7b55j")
+
+[node name="TextureButton3" type="TextureRect" parent="HBoxContainer" unique_id=1768076143]
+layout_mode = 2
+texture = ExtResource("12_5pajh")
+
+[node name="TextureButton4" type="TextureRect" parent="HBoxContainer" unique_id=748760277]
+layout_mode = 2
+texture = ExtResource("13_j7ex8")
+
+[node name="TextureButton8" type="TextureRect" parent="HBoxContainer" unique_id=935991942]
+layout_mode = 2
+
+[node name="TextureButton5" type="TextureRect" parent="HBoxContainer" unique_id=1793278572]
+layout_mode = 2
+texture = ExtResource("14_a8gd2")
+
+[node name="TextureButton6" type="TextureRect" parent="HBoxContainer" unique_id=1583919505]
+layout_mode = 2
+texture = ExtResource("11_7b55j")
+
+[node name="TextureButton7" type="TextureRect" parent="HBoxContainer" unique_id=1287066694]
+layout_mode = 2
+texture = ExtResource("15_hstxw")
+
+[node name="Botoes" type="VBoxContainer" parent="." unique_id=2080528028]
+layout_mode = 0
+offset_left = -4310.0
+offset_top = 264.0
+offset_right = -2670.0
+offset_bottom = 928.0
+scale = Vector2(5.9600005, 5.9600005)
+
+[node name="TextureButton" type="TextureButton" parent="Botoes" unique_id=819736347]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("16_5pajh")
+
+[node name="Label" type="Label" parent="Botoes/TextureButton" unique_id=699616204]
+layout_mode = 0
+offset_left = 8.3892565
+offset_top = 0.33556435
+offset_right = 619.3893
+offset_bottom = 85.33556
+scale = Vector2(0.097595975, 0.12265269)
+theme_override_fonts/font = ExtResource("23_vr8o3")
+theme_override_font_sizes/font_size = 66
+text = "JOGAR "
+label_settings = SubResource("LabelSettings_8egab")
+text_direction = 1
+
+[connection signal="mouse_entered" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="Botoes/TextureButton" to="." method="_on_texture_button_pressed"]

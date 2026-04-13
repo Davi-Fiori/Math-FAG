@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://fgvu33i50iqc"]
+
+[ext_resource type="Texture2D" uid="uid://bcxo5ju41vywl" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="1_ns4gr"]
+[ext_resource type="Texture2D" uid="uid://demk8mctc074f" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="2_3a8fu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqrxm"]
+atlas = ExtResource("1_ns4gr")
+region = Rect2(0, 0, 133, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px3rc"]
+atlas = ExtResource("2_3a8fu")
+region = Rect2(0, 0, 140, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mkry2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqrxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px3rc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_3a8fu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.9999998, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ns4gr"]
+resource_name = "horizontal"
+length = 16.666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 16.566668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.9999998, 0), Vector2(-1202.0001, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3a8fu"]
+_data = {
+&"RESET": SubResource("Animation_3a8fu"),
+&"horizontal": SubResource("Animation_ns4gr")
+}
+
+[node name="Nuvem" type="Node2D" unique_id=1226984404]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1089080663]
+z_as_relative = false
+position = Vector2(2.9999998, 0)
+scale = Vector2(0.65571827, 0.64675564)
+sprite_frames = SubResource("SpriteFrames_mkry2")
+autoplay = "default"
+frame_progress = 0.36129677
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=664635255]
+libraries/ = SubResource("AnimationLibrary_3a8fu")
+autoplay = &"horizontal"

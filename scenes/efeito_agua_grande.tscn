@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b5551gddgt2ij"]
+
+[ext_resource type="Texture2D" uid="uid://bpy3qfliy2i2p" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="1_khsju"]
+[ext_resource type="Texture2D" uid="uid://4f1ddkt00ryw" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="2_2qh57"]
+[ext_resource type="Texture2D" uid="uid://p4c56tp4gsq2" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png" id="3_mpdsg"]
+[ext_resource type="Texture2D" uid="uid://yn2ci1xuxoi4" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png" id="4_gcpbw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ww3f"]
+atlas = ExtResource("1_khsju")
+region = Rect2(0, 0, 170, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bew0n"]
+atlas = ExtResource("2_2qh57")
+region = Rect2(0, 0, 170, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c62ti"]
+atlas = ExtResource("3_mpdsg")
+region = Rect2(0, 0, 170, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7nsb"]
+atlas = ExtResource("4_gcpbw")
+region = Rect2(0, 0, 170, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xjg5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ww3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bew0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c62ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7nsb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="EfeitoAguaGrande" type="StaticBody2D" unique_id=1758614634]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=692905775]
+sprite_frames = SubResource("SpriteFrames_2xjg5")
+autoplay = "default"
+frame_progress = 0.38114253

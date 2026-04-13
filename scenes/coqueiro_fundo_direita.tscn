@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://tam1lpl5mxap"]
+
+[ext_resource type="Texture2D" uid="uid://3wb0chcije5d" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 01.png" id="1_ewl3v"]
+[ext_resource type="Texture2D" uid="uid://ueut1m2gbynq" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 02.png" id="2_58qnh"]
+[ext_resource type="Texture2D" uid="uid://b360e4xh35e0h" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 03.png" id="3_xtmfw"]
+[ext_resource type="Texture2D" uid="uid://c2121oqgnoa5c" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 04.png" id="4_eeqks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y0h4"]
+atlas = ExtResource("1_ewl3v")
+region = Rect2(0, 0, 51, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj6th"]
+atlas = ExtResource("2_58qnh")
+region = Rect2(0, 0, 51, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qruer"]
+atlas = ExtResource("3_xtmfw")
+region = Rect2(0, 0, 51, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1mp3"]
+atlas = ExtResource("4_eeqks")
+region = Rect2(0, 0, 51, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tpigq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y0h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj6th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qruer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1mp3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CoqueiroFundoDireita" type="StaticBody2D" unique_id=1696995826]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1282585858]
+sprite_frames = SubResource("SpriteFrames_tpigq")
+autoplay = "default"
+frame_progress = 0.6477751

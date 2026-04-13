@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c43vbtwwpmu4m"]
+
+[ext_resource type="Texture2D" uid="uid://dmdchb7dboq6u" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png" id="1_3vgdl"]
+[ext_resource type="Texture2D" uid="uid://deem7kxqyapu5" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 02.png" id="2_m3cn3"]
+[ext_resource type="Texture2D" uid="uid://wcpo7g23swba" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 03.png" id="3_q61y3"]
+[ext_resource type="Texture2D" uid="uid://cwcvt2bxjw7yi" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 04.png" id="4_gw7xq"]
+[ext_resource type="Texture2D" uid="uid://dhx7k8bpgtgam" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="5_m3cn3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6fol"]
+atlas = ExtResource("1_3vgdl")
+region = Rect2(0, 0, 39, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_465j8"]
+atlas = ExtResource("2_m3cn3")
+region = Rect2(0, 0, 39, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8pho"]
+atlas = ExtResource("3_q61y3")
+region = Rect2(0, 0, 39, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw2m1"]
+atlas = ExtResource("4_gw7xq")
+region = Rect2(0, 0, 39, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_piprk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6fol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_465j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8pho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw2m1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q61y3"]
+atlas = ExtResource("5_m3cn3")
+region = Rect2(11, 0, 9, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cn3"]
+size = Vector2(34.999996, 22)
+
+[node name="CoqueiroFrente" type="StaticBody2D" unique_id=545297707]
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210361967]
+position = Vector2(0.99999905, -8.421877)
+scale = Vector2(0.9743589, 0.9736328)
+sprite_frames = SubResource("SpriteFrames_piprk")
+autoplay = "default"
+frame_progress = 0.93529326
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D" unique_id=1081558028]
+position = Vector2(0.5933399, 37.333336)
+scale = Vector2(0.78042775, 0.72675586)
+texture = SubResource("AtlasTexture_q61y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=871353598]
+position = Vector2(1.499999, -10)
+scale = Vector2(1.0000005, 1)
+shape = SubResource("RectangleShape2D_m3cn3")
+one_way_collision = true

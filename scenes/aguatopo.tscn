@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cwqmm3h3co8sj"]
+
+[ext_resource type="Texture2D" uid="uid://dk6114ucowref" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/1.png" id="1_truys"]
+[ext_resource type="Texture2D" uid="uid://c85iemmejd07o" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/2.png" id="2_8dqo2"]
+[ext_resource type="Texture2D" uid="uid://ctd5j6g5ohd6d" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/3.png" id="3_psdug"]
+[ext_resource type="Texture2D" uid="uid://b4qfr2p78g5ra" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/4.png" id="4_kd5mo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4frk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_truys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8dqo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_psdug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kd5mo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="aguatopo" type="Area2D" unique_id=1309099042]
+scale = Vector2(1.6800022, 1.6800022)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=996801309]
+sprite_frames = SubResource("SpriteFrames_4frk5")
+autoplay = "default"
+frame_progress = 0.6291767

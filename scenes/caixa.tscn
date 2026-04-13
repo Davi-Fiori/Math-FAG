@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bpevi5svpb5sv"]
+
+[ext_resource type="Texture2D" uid="uid://cpu5v3tjm6og4" path="res://Treasure Hunters/Merchant Ship/Sprites/Box/Idle/1.png" id="1_a26xw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2vea"]
+size = Vector2(25, 18)
+
+[node name="caixa" type="StaticBody2D" unique_id=818132226]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036922025]
+texture = ExtResource("1_a26xw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387106154]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_i2vea")
