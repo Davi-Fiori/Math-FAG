@@ -15,6 +15,10 @@ run/main_scene="uid://dl1atudlt7ol4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://vb1ivfyiw0os"
+
 [input]
 
 andar_esquerda={

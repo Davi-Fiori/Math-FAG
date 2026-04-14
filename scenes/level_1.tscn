@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://fgvu33i50iqc" path="res://scenes/nuvem.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://tam1lpl5mxap" path="res://scenes/coqueiro_fundo_direita.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://b5551gddgt2ij" path="res://scenes/efeito_agua_grande.tscn" id="4_pa8r4"]
+[ext_resource type="Texture2D" uid="uid://xdgqelgqoxs3" path="res://icons/Clock.png" id="4_x2xxo"]
 [ext_resource type="PackedScene" uid="uid://c43vbtwwpmu4m" path="res://scenes/coqueiro_frente.tscn" id="5_4nkto"]
 [ext_resource type="Texture2D" uid="uid://b23otaffo0ahg" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="8_1s4pk"]
 [ext_resource type="PackedScene" uid="uid://dji6evok8f8gw" path="res://scenes/num_3.tscn" id="9_2y5yt"]
@@ -712,22 +713,19 @@ theme_override_font_sizes/font_size = 49
 text = "4 "
 horizontal_alignment = 1
 
-[node name="tempo" type="Label" parent="HUD" unique_id=423492367]
-offset_left = 910.0
-offset_top = -5.0
-offset_right = 1062.0
-offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("2_6dial")
-theme_override_font_sizes/font_size = 38
-text = "TEMPO:"
-horizontal_alignment = 2
-vertical_alignment = 1
+[node name="relogio" type="TextureRect" parent="HUD" unique_id=1656873130]
+offset_left = 1035.0
+offset_top = 5.0
+offset_right = 1155.0
+offset_bottom = 125.0
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_x2xxo")
 
 [node name="TimeLabel" type="Label" parent="HUD" unique_id=1186663789]
-offset_left = 1074.0
-offset_top = -6.0
-offset_right = 1114.0
-offset_bottom = 44.0
+offset_left = 1084.0
+offset_top = -4.0
+offset_right = 1124.0
+offset_bottom = 46.0
 theme_override_fonts/font = ExtResource("2_6dial")
 theme_override_font_sizes/font_size = 38
 horizontal_alignment = 2

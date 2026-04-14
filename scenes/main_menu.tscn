@@ -19,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://qsvdf7de7atf" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/6.png" id="14_a8gd2"]
 [ext_resource type="Texture2D" uid="uid://dcw7vujsnshk5" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/7.png" id="15_hstxw"]
 [ext_resource type="Texture2D" uid="uid://bnoulkny1mkyp" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Button/New Project.png" id="16_5pajh"]
+[ext_resource type="Texture2D" uid="uid://cpale3iagkls3" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Button/1.png" id="21_gw5y6"]
+[ext_resource type="Texture2D" uid="uid://cl54nw5j1kmpw" path="res://icons/Music-0.png" id="22_1dfpl"]
+[ext_resource type="Texture2D" uid="uid://b7aovnnc3ibht" path="res://icons/Power.png" id="22_qywvv"]
+[ext_resource type="Texture2D" uid="uid://d0brd0rw6ftm2" path="res://icons/Speaker-Crossed.png" id="23_qywvv"]
 [ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="23_vr8o3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oa1go"]
@@ -166,7 +170,6 @@ script = ExtResource("1_svtp6")
 
 [node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=2073240174]
 stream = ExtResource("1_8egab")
-volume_db = -9.123
 autoplay = true
 
 [node name="SomBotao" type="AudioStreamPlayer" parent="." unique_id=367491996]
@@ -181,6 +184,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 1.0399998)
 color = Color(0.33428845, 0.70393544, 0.85791636, 1)
 
 [node name="Nuvems" type="Node" parent="." unique_id=435682286]
@@ -292,6 +296,64 @@ text = "JOGAR "
 label_settings = SubResource("LabelSettings_8egab")
 text_direction = 1
 
+[node name="Opcoes" type="HBoxContainer" parent="." unique_id=72205455]
+z_index = 2
+layout_mode = 0
+offset_left = 479.00003
+offset_top = 381.0
+offset_right = 542.0
+offset_bottom = 421.0
+scale = Vector2(6.0829034, 5.9386983)
+theme_override_constants/separation = 3
+
+[node name="Musica" type="TextureButton" parent="Opcoes" unique_id=213169061]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("21_gw5y6")
+
+[node name="On" type="TextureRect" parent="Opcoes/Musica" unique_id=237755300]
+layout_mode = 0
+offset_left = 3.9462285
+offset_top = 2.6375852
+offset_right = 123.94623
+offset_bottom = 142.63759
+scale = Vector2(0.046979234, 0.046979234)
+texture = ExtResource("22_1dfpl")
+
+[node name="Off" type="TextureRect" parent="Opcoes/Musica" unique_id=1331664602]
+visible = false
+layout_mode = 0
+offset_left = 3.9462306
+offset_top = 2.637584
+offset_right = 133.94623
+offset_bottom = 142.63759
+scale = Vector2(0.046979114, 0.046979114)
+texture = ExtResource("23_qywvv")
+
+[node name="Sair" type="TextureButton" parent="Opcoes" unique_id=429604049]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("21_gw5y6")
+
+[node name="Exit" type="TextureRect" parent="Opcoes/Sair" unique_id=1254596776]
+layout_mode = 0
+offset_left = 3.8781843
+offset_top = 2.1890295
+offset_right = 123.87818
+offset_bottom = 142.18903
+scale = Vector2(0.046979234, 0.046979234)
+texture = ExtResource("22_qywvv")
+
 [connection signal="mouse_entered" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="Botoes/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="Opcoes/Musica" to="." method="_on_musica_mouse_entered"]
+[connection signal="mouse_exited" from="Opcoes/Musica" to="." method="_on_musica_mouse_exited"]
+[connection signal="pressed" from="Opcoes/Musica" to="." method="_on_musica_pressed"]
+[connection signal="mouse_entered" from="Opcoes/Sair" to="." method="_on_sair_mouse_entered"]
+[connection signal="mouse_exited" from="Opcoes/Sair" to="." method="_on_sair_mouse_exited"]
+[connection signal="pressed" from="Opcoes/Sair" to="." method="_on_sair_pressed"]

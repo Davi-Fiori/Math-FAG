@@ -82,11 +82,15 @@ collision_layer = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1214201285]
 scale = Vector2(1.8019965, 1.8019965)
 sprite_frames = SubResource("SpriteFrames_r3u6e")
+autoplay = "default"
+frame_progress = 0.08991023
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1713685815]
 position = Vector2(-6, -61.000004)
 scale = Vector2(1.6800013, 1.6800013)
 sprite_frames = SubResource("SpriteFrames_uda4k")
+autoplay = "default"
+frame_progress = 0.04939442
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1434828813]
 position = Vector2(-2.25, -14)
