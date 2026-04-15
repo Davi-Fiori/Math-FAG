@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://c62u8grlcnah1" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="18_uxh1f"]
 [ext_resource type="Texture2D" uid="uid://1gonm1bg215c" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="19_x37dd"]
 [ext_resource type="Texture2D" uid="uid://7c047qube86o" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="20_uh8pl"]
+[ext_resource type="SpriteFrames" uid="uid://cdn2r8evl6vb2" path="res://sprites/particulas.tres" id="26_p8svx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1gejh"]
 animations = [{
@@ -143,5 +144,60 @@ sprite_frames = SubResource("SpriteFrames_1gejh")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="ParticulasFall" type="AnimatedSprite2D" parent="." unique_id=460626238]
+visible = false
+position = Vector2(5.9604645e-08, 9.000001)
+scale = Vector2(0.59999824, 0.59999824)
+sprite_frames = ExtResource("26_p8svx")
+animation = &"fall"
+frame = 4
+frame_progress = 1.0
+
+[node name="ParticulasRunL" type="AnimatedSprite2D" parent="." unique_id=531261274]
+visible = false
+position = Vector2(12, 2.9999995)
+scale = Vector2(-0.92000186, 1.0615361)
+sprite_frames = ExtResource("26_p8svx")
+animation = &"run"
+frame_progress = 0.5279416
+
+[node name="ParticulasRunR" type="AnimatedSprite2D" parent="." unique_id=456576703]
+visible = false
+position = Vector2(-10, 3)
+scale = Vector2(0.6800008, 1.0615361)
+sprite_frames = ExtResource("26_p8svx")
+animation = &"run"
+frame_progress = 0.5260063
+
+[node name="ParticulasJumpL" type="AnimatedSprite2D" parent="." unique_id=257490201]
+visible = false
+position = Vector2(9, 17.999998)
+rotation = -0.36726153
+scale = Vector2(0.68194973, -0.5135251)
+sprite_frames = ExtResource("26_p8svx")
+animation = &"jump"
+frame = 5
+frame_progress = 1.0
+
+[node name="ParticulasJumpR" type="AnimatedSprite2D" parent="." unique_id=891481973]
+position = Vector2(-10, 18)
+rotation = 0.44868597
+scale = Vector2(-0.6046232, -0.5135251)
+sprite_frames = ExtResource("26_p8svx")
+animation = &"jump"
+frame = 5
+frame_progress = 1.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1390233492]
 shape = SubResource("CircleShape2D_4alki")
+
+[connection signal="animation_finished" from="ParticulasFall" to="." method="_on_particulas_animation_finished"]
+[connection signal="ready" from="ParticulasFall" to="." method="_on_particulas_ready"]
+[connection signal="animation_finished" from="ParticulasRunL" to="." method="_on_particulas_animation_finished"]
+[connection signal="ready" from="ParticulasRunL" to="." method="_on_particulas_ready"]
+[connection signal="animation_finished" from="ParticulasRunR" to="." method="_on_particulas_animation_finished"]
+[connection signal="ready" from="ParticulasRunR" to="." method="_on_particulas_ready"]
+[connection signal="animation_finished" from="ParticulasJumpL" to="." method="_on_particulas_animation_finished"]
+[connection signal="ready" from="ParticulasJumpL" to="." method="_on_particulas_ready"]
+[connection signal="animation_finished" from="ParticulasJumpR" to="." method="_on_particulas_animation_finished"]
+[connection signal="ready" from="ParticulasJumpR" to="." method="_on_particulas_ready"]
