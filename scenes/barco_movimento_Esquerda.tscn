@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://c0wvv5xcklr1"]
+
+[ext_resource type="Script" uid="uid://cjmeqahwlh008" path="res://scenes/barco_movimento_esquerda.gd" id="1_jhmxd"]
+[ext_resource type="Texture2D" uid="uid://imgq1hksmbiq" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/1.png" id="2_r01d4"]
+[ext_resource type="Texture2D" uid="uid://vynakxawtcuo" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/2.png" id="3_fcxv0"]
+[ext_resource type="Texture2D" uid="uid://b7ymqaklkcjli" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/3.png" id="4_xmipe"]
+[ext_resource type="Texture2D" uid="uid://n57ppswdnm4c" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/4.png" id="5_falfg"]
+[ext_resource type="Texture2D" uid="uid://caoqugl34ri8e" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/5.png" id="6_wrbop"]
+[ext_resource type="Texture2D" uid="uid://tuyjlanrvvrl" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/6.png" id="7_qoy8n"]
+[ext_resource type="Texture2D" uid="uid://da0iycdmgmf8d" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/1.png" id="8_82c7d"]
+[ext_resource type="Texture2D" uid="uid://eab8sbfqpgr2" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/2.png" id="9_bop4x"]
+[ext_resource type="Texture2D" uid="uid://c4ts71w0ryws6" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/3.png" id="10_0i2sy"]
+[ext_resource type="Texture2D" uid="uid://bm2s153llf3r8" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/4.png" id="11_os25d"]
+[ext_resource type="Texture2D" uid="uid://dkfshjm14sefw" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/5.png" id="12_dktq2"]
+[ext_resource type="Texture2D" uid="uid://csx40crgrdpr1" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/6.png" id="13_sbtqy"]
+[ext_resource type="Texture2D" uid="uid://dvjhfrjiey0pn" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/7.png" id="14_lypv6"]
+[ext_resource type="Texture2D" uid="uid://crjd4ougp2l0a" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/8.png" id="15_ffw5u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3u6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r01d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fcxv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xmipe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_falfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wrbop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qoy8n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uda4k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_82c7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bop4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0i2sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_os25d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dktq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_sbtqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lypv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ffw5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="barco_Movimento" type="StaticBody2D" unique_id=721846387]
+scale = Vector2(-1, 1)
+collision_layer = 2
+script = ExtResource("1_jhmxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1214201285]
+scale = Vector2(1.8019965, 1.8019965)
+sprite_frames = SubResource("SpriteFrames_r3u6e")
+autoplay = "default"
+frame_progress = 0.61145806
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1713685815]
+position = Vector2(-6, -61.000004)
+scale = Vector2(1.6800013, 1.6800013)
+sprite_frames = SubResource("SpriteFrames_uda4k")
+autoplay = "default"

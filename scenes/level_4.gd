@@ -46,8 +46,7 @@ func check_answer(picked_value):
 			spawn_key()
 			
 	else:
-		# WRONG ANSWER
-		# Tell the crab to play its death sequence
+		# WRONG ANSWER - It wasn't a 5 or a 7!
 		$caranguejo.die()
 
 func spawn_key():
