@@ -20,6 +20,20 @@ func _ready():
 	# Ensure the "On" icon is showing when the game starts
 	icon_on.show()
 	icon_off.hide()
+	
+	# --- CONTROLLER SUPPORT ---
+	# 1. Give the controller a starting point (Highlights the JOGAR button)
+	$Botoes/TextureButton.grab_focus()
+	
+	# 2. Make the controller trigger the exact same visual effects as the mouse
+	$Botoes/TextureButton.focus_entered.connect(_on_texture_button_mouse_entered)
+	$Botoes/TextureButton.focus_exited.connect(_on_texture_button_mouse_exited)
+	
+	btn_musica.focus_entered.connect(_on_musica_mouse_entered)
+	btn_musica.focus_exited.connect(_on_musica_mouse_exited)
+	
+	btn_sair.focus_entered.connect(_on_sair_mouse_entered)
+	btn_sair.focus_exited.connect(_on_sair_mouse_exited)
 
 # --- PLAY BUTTON ---
 

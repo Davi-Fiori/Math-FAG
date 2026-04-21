@@ -64,6 +64,8 @@ _data = {
 }
 
 [node name="Nuvem" type="Node2D" unique_id=1226984404]
+modulate = Color(1, 1, 1, 0.7294118)
+z_index = -1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1089080663]
 z_as_relative = false

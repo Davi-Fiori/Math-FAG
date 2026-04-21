@@ -1,11 +1,8 @@
 extends Node2D
 
 @onready var key = $chave
-@onready var door = $Tiles/porta
-
-# ATENÇÃO: Se o erro "null instance" voltar, é este caminho abaixo que você precisa
-# arrumar segurando Ctrl e arrastando o caranguejo da aba Scene para cá!
-@onready var player = $Tiles/caranguejo
+@onready var door = $porta
+@onready var player = $caranguejo
 
 @onready var timer = $Timer
 @onready var question_mark_label = $HUD/HBoxContainer/TextureRect3/interrogacao
@@ -44,18 +41,24 @@ func show_door():
 	door.process_mode = Node.PROCESS_MODE_INHERIT
 	door.get_node("AnimatedSprite2D").play("abrindo")
 	
+	# Wait 2 seconds while the animation plays
 	await get_tree().create_timer(1.0).timeout
 	
+	# The 2 seconds are up! Unlock the door.
 	can_enter_door = true
 	
+	# Check if the crab is ALREADY standing inside the door!
 	for body in door.get_overlapping_bodies():
 		if body.name == "caranguejo":
 			go_to_next_level()
 
+# --- DOOR TOUCH LOGIC ---
 func _on_door_body_entered(body):
+	# Check if it is the crab AND the door is fully unlocked
 	if body.name == "caranguejo" and can_enter_door == true:
 		go_to_next_level()
 
+# --- "SMART DOOR" MATH ---
 func go_to_next_level():
 	var current_path = get_tree().current_scene.scene_file_path 
 	var level_number = current_path.get_file().get_basename().trim_prefix("level_").to_int()
@@ -63,9 +66,10 @@ func go_to_next_level():
 	var next_level_path = "res://scenes/level_" + str(next_level_number) + ".tscn"
 	
 	if ResourceLoader.exists(next_level_path):
-		get_tree().change_scene_to_file(next_level_path)
+		get_tree().call_deferred("change_scene_to_file", next_level_path)
 	else:
-		print("VOCÊ ZEROU O JOGO!")
+		print("YOU BEAT THE GAME!")
+		# get_tree().call_deferred("change_scene_to_file", "res://scenes/victory_screen.tscn")
 
 func restart_level():
 	get_tree().call_deferred("reload_current_scene")

@@ -185,7 +185,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.0399998)
-color = Color(0.33428845, 0.70393544, 0.85791636, 1)
+color = Color(0.4862745, 0.8, 0.93333334, 0.8235294)
 
 [node name="Nuvems" type="Node" parent="." unique_id=435682286]
 
@@ -223,7 +223,7 @@ tile_set = SubResource("TileSet_5dd4i")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=923237548]
 z_index = 1
-position = Vector2(-1361.0001, -944)
+position = Vector2(-1361, -923)
 scale = Vector2(6.375, 6.375)
 tile_map_data = PackedByteArray("AAAPAAoABQAAAAAAAAAPAAsABQAAAAEAAAAQAAoABQABAAAAAAAQAAsABQABAAEAAAARAAoABgAAAAAAAAARAAsABgAAAAEAAAASAAoABgABAAAAAAASAAsABgABAAEAAAATAAoABgAAAAAAAAATAAsABgAAAAEAAAAUAAoABgABAAAAAAAUAAsABgABAAEAAAAWAAoABwABAAAAAAAWAAsABwABAAEAAAAVAAoABwAAAAAAAAAVAAsABwAAAAEAAAA=")
 tile_set = SubResource("TileSet_5dd4i")
@@ -231,10 +231,10 @@ tile_set = SubResource("TileSet_5dd4i")
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=213713164]
 z_index = 2
 layout_mode = 0
-offset_left = 352.0
-offset_top = 145.0
-offset_right = 415.0
-offset_bottom = 185.0
+offset_left = 353.0
+offset_top = 167.0
+offset_right = 416.0
+offset_bottom = 207.0
 scale = Vector2(7.9199996, 1.3199987)
 theme_override_constants/separation = 3
 

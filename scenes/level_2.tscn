@@ -687,13 +687,13 @@ script = ExtResource("1_k22d5")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=456158037]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=2093066865]
-offset_left = 11.0
-offset_top = 13.0
-offset_right = 280.0
-offset_bottom = 63.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 328.0
+offset_bottom = 68.0
 
 [node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer" unique_id=530342254]
-self_modulate = Color(0.66656864, 0.6665687, 0.66656864, 1)
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
 layout_mode = 2
 texture = ExtResource("2_wdtqu")
 expand_mode = 2
@@ -702,10 +702,9 @@ expand_mode = 2
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = -23.0
-offset_top = -4.0
-offset_right = 106.0
-offset_bottom = 60.0
+offset_left = -20.0
+offset_right = 109.0
+offset_bottom = 64.0
 scale = Vector2(0.8399997, 0.8399997)
 pivot_offset = Vector2(-23.809534, -23.809532)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -715,7 +714,7 @@ text = "3"
 horizontal_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1852167826]
-self_modulate = Color(0.66656864, 0.6665687, 0.66656864, 1)
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
 layout_mode = 2
 texture = ExtResource("2_wdtqu")
 expand_mode = 2
@@ -724,10 +723,9 @@ expand_mode = 2
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = -25.0
-offset_top = -3.0
-offset_right = 104.0
-offset_bottom = 61.0
+offset_left = -21.0
+offset_right = 108.0
+offset_bottom = 64.0
 scale = Vector2(0.8399997, 0.8399997)
 pivot_offset = Vector2(-16.666674, -33.333344)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -737,7 +735,7 @@ text = "+"
 horizontal_alignment = 1
 
 [node name="TextureRect3" type="TextureRect" parent="HUD/HBoxContainer" unique_id=281111098]
-self_modulate = Color(0.66656864, 0.6665687, 0.66656864, 1)
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
 layout_mode = 2
 texture = ExtResource("2_wdtqu")
 expand_mode = 2
@@ -751,9 +749,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -37.0
-offset_top = -32.0
-offset_bottom = 32.0
+offset_left = -41.0
+offset_top = -35.0
+offset_right = -4.0
+offset_bottom = 29.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.8399997, 0.8399997)
@@ -765,7 +764,7 @@ text = "?"
 horizontal_alignment = 1
 
 [node name="TextureRect4" type="TextureRect" parent="HUD/HBoxContainer" unique_id=901968110]
-self_modulate = Color(0.66656864, 0.6665687, 0.66656864, 1)
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
 layout_mode = 2
 texture = ExtResource("2_wdtqu")
 expand_mode = 2
@@ -794,7 +793,7 @@ text = "="
 horizontal_alignment = 1
 
 [node name="TextureRect5" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1723451754]
-self_modulate = Color(0.66656864, 0.6665687, 0.66656864, 1)
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
 layout_mode = 2
 texture = SubResource("CompressedTexture2D_guvtl")
 expand_mode = 2
@@ -861,7 +860,7 @@ position = Vector2(133, 5)
 
 [node name="chave" parent="." unique_id=1934125306 instance=ExtResource("6_k6a82")]
 z_index = 1
-position = Vector2(-81, -57)
+position = Vector2(-80, -64)
 scale = Vector2(1.28, 1.28)
 
 [node name="CoqueiroFundoDireita" parent="." unique_id=1696995826 instance=ExtResource("18_7qsfm")]
@@ -884,35 +883,27 @@ position = Vector2(60, 5)
 [node name="Tiles" type="Node" parent="." unique_id=869529798]
 
 [node name="Nuvem" parent="Tiles" unique_id=1226984404 instance=ExtResource("9_vwfin")]
-modulate = Color(0.96474224, 0.96474224, 0.9647421, 1)
 position = Vector2(227, -22)
 
 [node name="Nuvem2" parent="Tiles" unique_id=1978944408 instance=ExtResource("9_vwfin")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(309, -124)
 
 [node name="Nuvem3" parent="Tiles" unique_id=1790839440 instance=ExtResource("9_vwfin")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(452, -29)
 
 [node name="Nuvem4" parent="Tiles" unique_id=564069270 instance=ExtResource("9_vwfin")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(590, -126)
 
 [node name="Nuvem5" parent="Tiles" unique_id=1191967638 instance=ExtResource("9_vwfin")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(730, -12)
 
 [node name="Nuvem6" parent="Tiles" unique_id=2147337473 instance=ExtResource("9_vwfin")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(806, -131)
 
 [node name="Nuvem7" parent="Tiles" unique_id=2061952357 instance=ExtResource("9_vwfin")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(957, -44)
 
 [node name="Nuvem8" parent="Tiles" unique_id=1735063597 instance=ExtResource("9_vwfin")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(1057, -80)
 
 [node name="Terreno" type="TileMapLayer" parent="Tiles" unique_id=1509575793]

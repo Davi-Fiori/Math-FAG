@@ -6,7 +6,6 @@ extends Node2D
 @onready var question_mark_label = $HUD/HBoxContainer/TextureRect3/interrogacao
 @onready var time_label = $HUD/TimeLabel
 
-# The ONLY thing different between your levels now is this number!
 var correct_answer = 1
 
 var can_enter_door = false 

@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 # Velocidade do barco em pixels por segundo
-@export var velocidade: float = 45.0
+@export var velocidade: float = 33.0
 
 # Ponto de partida (X) e ponto de chegada (X)
 var limite_esquerda: float = -190.0 # Onde ele "some"

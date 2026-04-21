@@ -765,31 +765,24 @@ modulate = Color(0.96474224, 0.96474224, 0.9647421, 1)
 position = Vector2(241, -68)
 
 [node name="Nuvem2" parent="Tiles" unique_id=1978944408 instance=ExtResource("3_rus8k")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(326, -127)
 
 [node name="Nuvem3" parent="Tiles" unique_id=1790839440 instance=ExtResource("3_rus8k")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(469, -80)
 
 [node name="Nuvem4" parent="Tiles" unique_id=564069270 instance=ExtResource("3_rus8k")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(622, -128)
 
 [node name="Nuvem5" parent="Tiles" unique_id=1191967638 instance=ExtResource("3_rus8k")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(755, -57)
 
 [node name="Nuvem6" parent="Tiles" unique_id=2147337473 instance=ExtResource("3_rus8k")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(833, -146)
 
 [node name="Nuvem7" parent="Tiles" unique_id=2061952357 instance=ExtResource("3_rus8k")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(982, -89)
 
 [node name="Nuvem8" parent="Tiles" unique_id=1735063597 instance=ExtResource("3_rus8k")]
-modulate = Color(0.9098039, 0.9098039, 0.9098039, 1)
 position = Vector2(1082, -125)
 
 [node name="CoqueiroFundoDireita" parent="Tiles" unique_id=1696995826 instance=ExtResource("4_15mv3")]

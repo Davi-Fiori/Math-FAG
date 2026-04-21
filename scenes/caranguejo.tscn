@@ -136,6 +136,7 @@ animations = [{
 radius = 13.0
 
 [node name="caranguejo" type="CharacterBody2D" unique_id=630639272]
+z_index = 1
 collision_mask = 14
 script = ExtResource("1_bipby")
 

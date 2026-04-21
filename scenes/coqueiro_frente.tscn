@@ -47,7 +47,7 @@ atlas = ExtResource("5_m3cn3")
 region = Rect2(11, 0, 9, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cn3"]
-size = Vector2(34.999996, 22)
+size = Vector2(30, 14)
 
 [node name="CoqueiroFrente" type="StaticBody2D" unique_id=545297707]
 collision_layer = 2
@@ -64,8 +64,7 @@ position = Vector2(0.5933399, 37.333336)
 scale = Vector2(0.78042775, 0.72675586)
 texture = SubResource("AtlasTexture_q61y3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=871353598]
-position = Vector2(1.499999, -10)
-scale = Vector2(1.0000005, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183556096]
+position = Vector2(1, -13)
 shape = SubResource("RectangleShape2D_m3cn3")
 one_way_collision = true

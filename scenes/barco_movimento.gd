@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var velocidade: float = 45.0 
+@export var velocidade: float = 20.0 
 # Distância que ele navega para a direita até sair totalmente da tela
 @export var distancia_sumir_direita: float = 300.0 
 # Distância extra para trás (esquerda) onde ele vai "nascer" de novo
