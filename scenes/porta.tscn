@@ -56,7 +56,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ed2e7"]
-size = Vector2(38, 47)
+size = Vector2(22, 20)
 
 [node name="porta" type="Area2D" unique_id=1806375926]
 collision_layer = 8
@@ -69,6 +69,5 @@ frame = 4
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1925533899]
-visible = false
-position = Vector2(0, 7.5)
+position = Vector2(1, 21)
 shape = SubResource("RectangleShape2D_ed2e7")

@@ -1059,7 +1059,6 @@ position = Vector2(-18, -4)
 script = ExtResource("1_q7pjq")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=456158037]
-visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=2093066865]
 offset_left = 12.0

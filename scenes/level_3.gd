@@ -29,7 +29,7 @@ func check_answer(picked_value):
 		get_tree().call_group("numbers", "queue_free")
 		spawn_key()
 	else:
-		# Usa a variável 'player' que criamos lá em cima
+		# Uses the 'player' variable you set up
 		player.die()
 
 func spawn_key():
@@ -41,38 +41,19 @@ func show_door():
 	door.process_mode = Node.PROCESS_MODE_INHERIT
 	door.get_node("AnimatedSprite2D").play("abrindo")
 	
-	# Wait 2 seconds while the animation plays
 	await get_tree().create_timer(1.0).timeout
-	
-	# The 2 seconds are up! Unlock the door.
 	can_enter_door = true
 	
-	# Check if the crab is ALREADY standing inside the door!
 	for body in door.get_overlapping_bodies():
 		if body.name == "caranguejo":
-			go_to_next_level()
+			door.advance_level(timer.time_left)
 
-# --- DOOR TOUCH LOGIC ---
 func _on_door_body_entered(body):
-	# Check if it is the crab AND the door is fully unlocked
 	if body.name == "caranguejo" and can_enter_door == true:
-		go_to_next_level()
-
-# --- "SMART DOOR" MATH ---
-func go_to_next_level():
-	var current_path = get_tree().current_scene.scene_file_path 
-	var level_number = current_path.get_file().get_basename().trim_prefix("level_").to_int()
-	var next_level_number = level_number + 1
-	var next_level_path = "res://scenes/level_" + str(next_level_number) + ".tscn"
-	
-	if ResourceLoader.exists(next_level_path):
-		get_tree().call_deferred("change_scene_to_file", next_level_path)
-	else:
-		print("YOU BEAT THE GAME!")
-		# get_tree().call_deferred("change_scene_to_file", "res://scenes/victory_screen.tscn")
+		door.advance_level(timer.time_left)
 
 func restart_level():
 	get_tree().call_deferred("reload_current_scene")
 	
-func _process(delta):
+func _process(_delta):
 	time_label.text = str(int(timer.time_left))
