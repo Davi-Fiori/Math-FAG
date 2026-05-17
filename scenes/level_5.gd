@@ -1,34 +1,77 @@
-extends Control
+extends Node2D
 
-# Grab your button node for the hover effects 
-# (Make sure this path perfectly matches your Scene Tree!)
-@onready var btn_voltar = $Botoes/Voltar
+@onready var question_mark_1 = $"HUD/HBoxContainer/TextureRect/numero 1"
+@onready var question_mark_2 = $HUD/HBoxContainer/TextureRect3/interrogacao
+@onready var key = $chave
+@onready var door = $porta
+@onready var timer = $Timer
+@onready var time_label = $HUD/TimeLabel
+@onready var player = $caranguejo
 
-func _ready() -> void:
-	$Botoes/Voltar.grab_focus()
-	# Optional: If you want the level music to stop exactly when this screen loads
-	# Global.stop_playlist()
-	pass
+var can_enter_door = false
+var required_numbers = [11,16]
+var collected_numbers = []
 
-func _on_voltar_pressed() -> void:
-	# 1. Disable the button so it can't be spammed
-	btn_voltar.disabled = true
+func _ready():
+	key.hide()
+	key.process_mode = Node.PROCESS_MODE_DISABLED
+	door.hide()
+	door.process_mode = Node.PROCESS_MODE_DISABLED
 	
-	# 2. Reset the score so the next playthrough starts fresh!
-	Global.total_score = 0
+	timer.timeout.connect(_on_timer_timeout)
+	# The Level is now the ONLY script listening for the door touch!
+	door.body_entered.connect(_on_door_body_entered)
+
+func _on_timer_timeout():
+	restart_level()
+
+func check_answer(picked_value):
+	# 1. Check if the grabbed number is one of the correct ones
+	if picked_value in required_numbers and not picked_value in collected_numbers:
+		
+		# Add it to our collected list
+		collected_numbers.append(picked_value)
+		
+		# 2. Update the HUD from left to right
+		if collected_numbers.size() == 1:
+			question_mark_1.text = str(picked_value)
+		elif collected_numbers.size() == 2:
+			question_mark_2.text = str(picked_value)
+			
+		# 3. Check if we have collected ALL the required numbers
+		if collected_numbers.size() == required_numbers.size():
+			# (We removed timer.stop() from here so the clock keeps ticking!)
+			get_tree().call_group("numbers", "queue_free")
+			spawn_key()
+			
+	else:
+		# WRONG ANSWER
+		$caranguejo.die()
+
+func spawn_key():
+	key.show()
+	key.process_mode = Node.PROCESS_MODE_INHERIT
+
+func show_door():
+	door.show()
+	door.process_mode = Node.PROCESS_MODE_INHERIT
+	door.get_node("AnimatedSprite2D").play("abrindo")
 	
-	# 3. Stop the global level music (so it doesn't overlap the main menu music)
-	Global.stop_playlist()
+	await get_tree().create_timer(1.0).timeout
+	can_enter_door = true
 	
-	# 4. Load the Main Menu
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	for body in door.get_overlapping_bodies():
+		if body.name == "caranguejo":
+			# WE NOW CALL THE DOOR SCRIPT AND SEND IT THE TIME!
+			door.advance_level(timer.time_left)
 
-# --- HOVER EFFECTS ---
+func _on_door_body_entered(body):
+	if body.name == "caranguejo" and can_enter_door == true:
+		# WE NOW CALL THE DOOR SCRIPT AND SEND IT THE TIME!
+		door.advance_level(timer.time_left)
 
-func _on_voltar_mouse_entered() -> void:
-	# Darken the button when hovered
-	btn_voltar.modulate = Color(0.758, 0.758, 0.758, 1.0)
+func restart_level():
+	get_tree().call_deferred("reload_current_scene")
 
-func _on_voltar_mouse_exited() -> void:
-	# Return to normal color
-	btn_voltar.modulate = Color(1.0, 1.0, 1.0)
+func _process(_delta):
+	time_label.text = str(int(timer.time_left))

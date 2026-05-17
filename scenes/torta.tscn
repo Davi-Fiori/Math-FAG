@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bmby7gygpp72r"]
+
+[ext_resource type="Script" uid="uid://ch6exbel2qun2" path="res://scenes/torta.gd" id="1_6125o"]
+[ext_resource type="Texture2D" uid="uid://4ke82byupmrk" path="res://Treasure Hunters/Assets Kenney/tile_0105.png" id="1_u4im5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2vea"]
+size = Vector2(18.5625, 14.5)
+
+[node name="torta" type="Area2D" unique_id=645642857]
+scale = Vector2(0.6443619, 0.6443619)
+collision_layer = 2
+script = ExtResource("1_6125o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036922025]
+texture = ExtResource("1_u4im5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387106154]
+position = Vector2(-0.28125, -3)
+shape = SubResource("RectangleShape2D_i2vea")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

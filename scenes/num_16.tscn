@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d053jufvepvt3"]
+
+[ext_resource type="Script" uid="uid://c8g7xumbp7ol0" path="res://scenes/num_16.gd" id="1_0x1ec"]
+[ext_resource type="Texture2D" uid="uid://lhbtdiyasrr" path="res://numbers/block_numbers_gb_10.png" id="2_yh66l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr73p"]
+atlas = ExtResource("2_yh66l")
+region = Rect2(9, 0, 5, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_122aw"]
+atlas = ExtResource("2_yh66l")
+region = Rect2(48, 0, 7, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp2tq"]
+size = Vector2(15, 14)
+
+[node name="num16" type="Area2D" unique_id=1733220363]
+collision_layer = 4
+script = ExtResource("1_0x1ec")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=126702058]
+texture = SubResource("AtlasTexture_dr73p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1726310683]
+position = Vector2(7, 0)
+texture = SubResource("AtlasTexture_122aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552277847]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_kp2tq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -16,4 +16,4 @@ func advance_level(time_left):
 		get_tree().call_deferred("change_scene_to_file", next_level_path)
 	else:
 		print("YOU BEAT THE GAME!")
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/level_5.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/level_6.tscn")
