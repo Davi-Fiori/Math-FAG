@@ -17,12 +17,12 @@
 [ext_resource type="Script" uid="uid://sv83ast48h8j" path="res://scenes/level_7.gd" id="15_7tfso"]
 [ext_resource type="Script" uid="uid://ib5mkfs3thl8" path="res://scenes/num_8.gd" id="15_36u6r"]
 [ext_resource type="PackedScene" uid="uid://bma64np87p7qe" path="res://scenes/num_6.tscn" id="16_quy6o"]
-[ext_resource type="Script" uid="uid://bvp2oj237rmvj" path="res://scenes/num_6.gd" id="17_8mhbk"]
+[ext_resource type="Script" uid="uid://bd2fckufa4ddw" path="res://scenes/num_6.gd" id="17_8mhbk"]
 [ext_resource type="PackedScene" uid="uid://byq26tbscu08x" path="res://scenes/num_9.tscn" id="17_u362a"]
 [ext_resource type="PackedScene" uid="uid://bci88b57gg18s" path="res://scenes/num_5.tscn" id="18_cdv58"]
 [ext_resource type="PackedScene" uid="uid://b5551gddgt2ij" path="res://scenes/efeito_agua_grande.tscn" id="19_8mhbk"]
 [ext_resource type="PackedScene" uid="uid://tam1lpl5mxap" path="res://scenes/coqueiro_fundo_direita.tscn" id="20_cdv58"]
-[ext_resource type="PackedScene" uid="uid://c3y8j0w4hjioq" path="res://scenes/barril.tscn" id="21_g3jes"]
+[ext_resource type="PackedScene" uid="uid://bmby7gygpp72r" path="res://scenes/torta.tscn" id="23_8c7da"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
 texture = ExtResource("8_1lha2")
@@ -1345,11 +1345,17 @@ position = Vector2(2, -131)
 rotation = 0.01739899
 scale = Vector2(-0.97280616, 0.8705078)
 
-[node name="barril" parent="." unique_id=1567382018 instance=ExtResource("21_g3jes")]
-position = Vector2(-70, 44)
+[node name="torta" parent="." unique_id=645642857 instance=ExtResource("23_8c7da")]
+position = Vector2(-48.000004, 48)
 
-[node name="barril2" parent="." unique_id=1556479860 instance=ExtResource("21_g3jes")]
-position = Vector2(65, 43)
+[node name="torta2" parent="." unique_id=1845844584 instance=ExtResource("23_8c7da")]
+position = Vector2(-30, 48)
+
+[node name="torta3" parent="." unique_id=1984732032 instance=ExtResource("23_8c7da")]
+position = Vector2(38, 48.000004)
+
+[node name="torta4" parent="." unique_id=2067297872 instance=ExtResource("23_8c7da")]
+position = Vector2(55, 48)
 
 [connection signal="body_entered" from="num5" to="num5" method="_on_body_entered"]
 [connection signal="body_entered" from="num6" to="num6" method="_on_body_entered"]
