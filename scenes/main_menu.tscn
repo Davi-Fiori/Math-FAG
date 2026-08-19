@@ -24,6 +24,14 @@
 [ext_resource type="Texture2D" uid="uid://b7aovnnc3ibht" path="res://icons/Power.png" id="22_qywvv"]
 [ext_resource type="Texture2D" uid="uid://d0brd0rw6ftm2" path="res://icons/Speaker-Crossed.png" id="23_qywvv"]
 [ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="23_vr8o3"]
+[ext_resource type="Texture2D" uid="uid://cmhxqw8eaaqdj" path="res://Treasure Hunters/popup.png" id="25_3wgol"]
+[ext_resource type="FontFile" uid="uid://c0nhxrqy7gsn3" path="res://font/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="26_1acrt"]
+
+[sub_resource type="Environment" id="Environment_qywvv"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.25
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oa1go"]
 texture = ExtResource("2_wu84c")
@@ -155,6 +163,9 @@ sources/7 = SubResource("TileSetAtlasSource_1ajci")
 font_size = 67
 outline_size = 4
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1acrt"]
+atlas = ExtResource("25_3wgol")
+
 [node name="MainMenu" type="Control" unique_id=218770627]
 layout_mode = 3
 anchors_preset = 15
@@ -167,6 +178,9 @@ offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_svtp6")
+
+[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=732684228]
+environment = SubResource("Environment_qywvv")
 
 [node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=2073240174]
 stream = ExtResource("1_8egab")
@@ -347,6 +361,105 @@ offset_right = 123.87818
 offset_bottom = 142.18903
 scale = Vector2(0.046979234, 0.046979234)
 texture = ExtResource("22_qywvv")
+
+[node name="AgePopup" type="ColorRect" parent="." unique_id=653899210]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.999996
+offset_right = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0399996, 1.0400003)
+color = Color(0, 0, 0, 0.6862745)
+
+[node name="TexturaPopUp" type="TextureRect" parent="AgePopup" unique_id=1347392052]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.34598
+offset_top = -266.3077
+offset_right = 5394.236
+offset_bottom = 6327.6377
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.081390776, 0.081390776)
+texture = SubResource("AtlasTexture_1acrt")
+
+[node name="Label" type="Label" parent="AgePopup/TexturaPopUp" unique_id=1478419408]
+layout_mode = 0
+offset_left = 767.9002
+offset_top = 519.80927
+offset_right = 4705.9004
+offset_bottom = 1802.8093
+scale = Vector2(1, 1.3)
+theme_override_colors/font_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+theme_override_fonts/font = ExtResource("23_vr8o3")
+theme_override_font_sizes/font_size = 500
+text = "PREEncha os
+campos:"
+horizontal_alignment = 1
+
+[node name="AgeDropdown" type="OptionButton" parent="AgePopup/TexturaPopUp" unique_id=292075110]
+layout_mode = 0
+offset_left = 1760.2639
+offset_top = 3804.0586
+offset_right = 1896.2639
+offset_bottom = 3859.0586
+scale = Vector2(14.704101, 14.704101)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("26_1acrt")
+theme_override_font_sizes/font_size = 36
+alignment = 1
+
+[node name="NameEdit" type="LineEdit" parent="AgePopup/TexturaPopUp" unique_id=626115520]
+layout_mode = 0
+offset_left = 626.13385
+offset_top = 2539.977
+offset_right = 987.13385
+offset_bottom = 2594.977
+scale = Vector2(11.868774, 12.609312)
+theme_override_fonts/font = ExtResource("23_vr8o3")
+theme_override_font_sizes/font_size = 36
+placeholder_text = "Digite seu nome"
+alignment = 1
+max_length = 13
+expand_to_text_length = true
+
+[node name="TextureButton" type="TextureButton" parent="AgePopup/TexturaPopUp" unique_id=1960344166]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1281.8041
+offset_top = 1664.8428
+offset_right = -1239.8041
+offset_bottom = 1678.8428
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(60.506737, 58.555565)
+size_flags_horizontal = 4
+texture_normal = ExtResource("16_5pajh")
+
+[node name="Label" type="Label" parent="AgePopup/TexturaPopUp/TextureButton" unique_id=1226014177]
+layout_mode = 0
+offset_left = 2.1842465
+offset_right = 613.18427
+offset_bottom = 87.0
+scale = Vector2(0.08511416, 0.12265269)
+theme_override_fonts/font = ExtResource("23_vr8o3")
+theme_override_font_sizes/font_size = 66
+text = "CONFIRMAR"
+label_settings = SubResource("LabelSettings_8egab")
+text_direction = 1
 
 [connection signal="mouse_entered" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_exited"]

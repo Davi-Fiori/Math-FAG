@@ -23,6 +23,9 @@ func _ready():
 	door.body_entered.connect(_on_door_body_entered)
 
 func _on_timer_timeout():
+	record_error() # <--- Tell Firebase they ran out of time!
+	$caranguejo.die()
+	await get_tree().create_timer(2.0).timeout
 	restart_level()
 
 func check_answer(picked_value):
@@ -46,6 +49,7 @@ func check_answer(picked_value):
 			
 	else:
 		# WRONG ANSWER
+		record_error()
 		$caranguejo.die()
 
 func spawn_key():
@@ -75,3 +79,11 @@ func restart_level():
 
 func _process(_delta):
 	time_label.text = str(int(timer.time_left))
+	
+func record_error():
+	# Automatically figure out if this is level_1, level_2, etc.
+	var current_path = get_tree().current_scene.scene_file_path
+	var level_number = current_path.get_file().get_basename().trim_prefix("level_").to_int()
+	
+	# Send it to the Global script!
+	Global.log_error(level_number)

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cl7vdq50e3wg8"]
 
-[ext_resource type="Script" uid="uid://ba1t75364kbmj" path="res://scenes/level_41.gd" id="1_e224s"]
-[ext_resource type="Texture2D" uid="uid://bnoulkny1mkyp" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Button/New Project.png" id="19_5j4t6"]
-[ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="20_jskkq"]
+[ext_resource type="Script" uid="uid://ba1t75364kbmj" path="res://scenes/level_8.gd" id="1_dhi38"]
+[ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="2_ixacv"]
+[ext_resource type="Texture2D" uid="uid://bnoulkny1mkyp" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Button/New Project.png" id="3_gjl5y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w2wna"]
 font_size = 1000
@@ -22,7 +22,7 @@ offset_right = 1.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_e224s")
+script = ExtResource("1_dhi38")
 
 [node name="FundoAzul" type="ColorRect" parent="." unique_id=312039996]
 self_modulate = Color(0.9691369, 0.9691369, 0.9691368, 1)
@@ -47,7 +47,7 @@ offset_top = -151.0
 offset_right = 5241.064
 offset_bottom = 1129.0
 scale = Vector2(0.097595975, 0.12265269)
-theme_override_fonts/font = ExtResource("20_jskkq")
+theme_override_fonts/font = ExtResource("2_ixacv")
 theme_override_font_sizes/font_size = 66
 text = "THE END.."
 label_settings = SubResource("LabelSettings_w2wna")
@@ -66,7 +66,7 @@ self_modulate = Color(0, 0.35253903, 0.6681772, 1)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("19_5j4t6")
+texture_normal = ExtResource("3_gjl5y")
 
 [node name="Label" type="Label" parent="Botoes/Voltar" unique_id=2027368514]
 layout_mode = 0
@@ -76,7 +76,7 @@ offset_right = 617.369
 offset_bottom = 87.33557
 scale = Vector2(0.097595975, 0.12265269)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("20_jskkq")
+theme_override_fonts/font = ExtResource("2_ixacv")
 theme_override_font_sizes/font_size = 66
 text = "VOLTAR"
 label_settings = SubResource("LabelSettings_e224s")

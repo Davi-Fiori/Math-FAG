@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*uid://vb1ivfyiw0os"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 ui_accept={
@@ -52,6 +56,10 @@ pular={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -60,3 +68,4 @@ pular={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true

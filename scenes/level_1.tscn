@@ -19,6 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://cpsf0rvwpdcey" path="res://scenes/porta.tscn" id="12_go7sj"]
 [ext_resource type="PackedScene" uid="uid://cyat7mx8h5lbv" path="res://scenes/chave.tscn" id="13_7gny6"]
 
+[sub_resource type="Environment" id="Environment_x2xxo"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.25
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nkto"]
 texture = ExtResource("2_5xbjy")
 separation = Vector2i(0, 4)
@@ -600,6 +606,9 @@ sources/0 = SubResource("TileSetAtlasSource_5xbjy")
 [node name="Level1" type="Node2D" unique_id=1820141578]
 script = ExtResource("1_6dial")
 
+[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=970181053]
+environment = SubResource("Environment_x2xxo")
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=456158037]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=2093066865]
@@ -732,7 +741,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=1493917879]
-wait_time = 30.0
+wait_time = 90.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=4080970]

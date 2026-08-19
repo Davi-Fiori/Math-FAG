@@ -12,6 +12,10 @@ const JUMP_VELOCITY = -300.0
 @onready var part_jump_r = $ParticulasJumpR
 @onready var part_fall = $ParticulasFall
 
+# --- TOUCH CONTROLS ---
+var swipe_start_pos = Vector2.ZERO
+var min_swipe_distance = 40 # How far they must swipe to trigger a jump
+
 func _ready() -> void:
 	# Conecta os sinais para sumirem quando a animação acabar
 	part_jump_l.animation_finished.connect(_on_part_jump_l_finished)
@@ -128,3 +132,52 @@ func die():
 	
 	await get_tree().create_timer(1.5).timeout
 	get_tree().call_deferred("reload_current_scene")
+	
+func _input(event):
+	var screen_width = get_viewport().get_visible_rect().size.x
+	var half_screen = screen_width / 2.0
+	var quarter_screen = screen_width / 4.0
+
+	# 1. WHEN THE FINGER FIRST TOUCHES (OR LETS GO)
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			if event.position.x < half_screen:
+				# Tapped the left side (Movement)
+				if event.position.x < quarter_screen:
+					Input.action_press("andar_esquerda")
+				else:
+					Input.action_press("andar_direita")
+			else:
+				# Tapped the right side (Jump)
+				Input.action_press("pular")
+				await get_tree().process_frame
+				Input.action_release("pular")
+				
+		elif not event.pressed:
+			# If they let go of the screen ON THE LEFT SIDE, stop walking.
+			# (We only check the left side so lifting the jump thumb doesn't stop them!)
+			if event.position.x < half_screen:
+				Input.action_release("andar_esquerda")
+				Input.action_release("andar_direita")
+
+	# 2. WHEN THE FINGER SLIDES ACROSS THE SCREEN (The New Magic!)
+	elif event is InputEventScreenDrag:
+		
+		# We only care about dragging if they are swiping around on the left half
+		if event.position.x < half_screen:
+			
+			# Did they slide their thumb into the Far-Left zone?
+			if event.position.x < quarter_screen:
+				Input.action_release("andar_direita") # Stop going right
+				Input.action_press("andar_esquerda")  # Start going left
+				
+			# Did they slide their thumb into the Mid-Left zone?
+			else:
+				Input.action_release("andar_esquerda") # Stop going left
+				Input.action_press("andar_direita")    # Start going right
+				
+		else:
+			# SAFETY CHECK: If they dragged their left thumb way too far 
+			# and accidentally crossed into the right side of the screen, stop walking!
+			Input.action_release("andar_esquerda")
+			Input.action_release("andar_direita")
