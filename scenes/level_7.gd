@@ -25,7 +25,8 @@ func _ready():
 	door.body_entered.connect(_on_door_body_entered)
 
 func _on_timer_timeout():
-	record_error() # <--- Tell Firebase they ran out of time!
+	# Pass "tempo" so Firebase logs it as levelX_tempo
+	record_error("tempo") 
 	$caranguejo.die()
 	await get_tree().create_timer(2.0).timeout
 	restart_level()
@@ -49,8 +50,8 @@ func check_answer(picked_value):
 			spawn_key()
 			
 	else:
-		# Se o jogador pegar um número errado (como o 3), ele perde
-		record_error()
+		# Pass "erros" so Firebase logs it as levelX_erros
+		record_error("erros") 
 		$caranguejo.die()
 
 func spawn_key():
@@ -82,10 +83,10 @@ func _process(_delta):
 func _on_num_6_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
 
-func record_error():
+func record_error(error_type: String):
 	# Automatically figure out if this is level_1, level_2, etc.
 	var current_path = get_tree().current_scene.scene_file_path
 	var level_number = current_path.get_file().get_basename().trim_prefix("level_").to_int()
 	
-	# Send it to the Global script!
-	Global.log_error(level_number)
+	# Send both the level number AND the type of error to Global!
+	Global.log_error(level_number, error_type)

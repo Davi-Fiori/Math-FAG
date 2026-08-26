@@ -105,11 +105,12 @@ func sync_to_cloud():
 # ==========================================
 # ERROR LOGGING SYSTEM
 # ==========================================
-func log_error(level_num: int):
-	# Create the exact string: "level1_erros"
-	var error_key = "level" + str(level_num) + "_erros"
+func log_error(level_num: int, error_type: String):
+	# This combines the level number and the type of error!
+	# Example results: "level1_erros", "level7_tempo", "level3_obstaculos"
+	var error_key = "level" + str(level_num) + "_" + error_type
 	
-	# If this is the first time they made an error on this level, start at 0
+	# If this is the first time this specific error happened on this level, start at 0
 	if not level_errors.has(error_key):
 		level_errors[error_key] = 0
 		
