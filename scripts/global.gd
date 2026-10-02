@@ -9,6 +9,8 @@ var player_age: int = 0
 var player_name: String = "" # <--- NEW: Stores the player's name
 var player_uuid: String = ""
 var level_errors: Dictionary = {}
+var selected_char_index: int = 0
+var selected_char_scene: String = "res://scenes/caranguejo.tscn"
 
 var save_path: String = "user://math_fag_save.json"
 

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dt640rrb3vpdj" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/Green Board (guide).png" id="2_wu84c"]
 [ext_resource type="Texture2D" uid="uid://c182vdyk4j784" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/1.png" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://c8cb2o4fe28os" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/3.png" id="4_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://dyxgvdf1steho" path="res://scenes/fundo_ceu.tscn" id="4_vr8o3"]
 [ext_resource type="Texture2D" uid="uid://bj1adek823umg" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/9.png" id="5_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://dbp6shkg7b5id" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Board/7.png" id="6_oa1go"]
 [ext_resource type="Texture2D" uid="uid://dnehn03be1xbi" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Banner/1.png" id="7_jk1qb"]
@@ -22,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cpale3iagkls3" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Button/1.png" id="21_gw5y6"]
 [ext_resource type="Texture2D" uid="uid://cl54nw5j1kmpw" path="res://icons/Music-0.png" id="22_1dfpl"]
 [ext_resource type="Texture2D" uid="uid://b7aovnnc3ibht" path="res://icons/Power.png" id="22_qywvv"]
-[ext_resource type="Texture2D" uid="uid://d0brd0rw6ftm2" path="res://icons/Speaker-Crossed.png" id="23_qywvv"]
+[ext_resource type="Texture2D" uid="uid://ikoqj14scicw" path="res://icons/Music-33.png" id="23_1a85y"]
 [ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="23_vr8o3"]
 [ext_resource type="Texture2D" uid="uid://cmhxqw8eaaqdj" path="res://Treasure Hunters/popup.png" id="25_3wgol"]
 [ext_resource type="FontFile" uid="uid://c0nhxrqy7gsn3" path="res://font/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="26_1acrt"]
@@ -33,7 +34,7 @@ adjustment_enabled = true
 adjustment_contrast = 1.05
 adjustment_saturation = 1.25
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oa1go"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1acrt"]
 texture = ExtResource("2_wu84c")
 0:0/0 = 0
 1:0/0 = 0
@@ -100,49 +101,49 @@ texture = ExtResource("2_wu84c")
 6:7/0 = 0
 7:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbmy8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vr8o3"]
 texture = ExtResource("3_8ln24")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jk1qb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1a85y"]
 texture = ExtResource("4_rtw2f")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dd4i"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hl5e0"]
 texture = ExtResource("5_rtw2f")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgwnu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_engjn"]
 texture = ExtResource("6_oa1go")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flqon"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6h3lr"]
 texture = ExtResource("7_jk1qb")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcqid"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj67d"]
 texture = ExtResource("8_5dd4i")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ajci"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vcge"]
 texture = ExtResource("9_lgwnu")
 0:0/0 = 0
 0:1/0 = 0
@@ -150,14 +151,14 @@ texture = ExtResource("9_lgwnu")
 1:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_5dd4i"]
-sources/0 = SubResource("TileSetAtlasSource_oa1go")
-sources/1 = SubResource("TileSetAtlasSource_tbmy8")
-sources/2 = SubResource("TileSetAtlasSource_jk1qb")
-sources/3 = SubResource("TileSetAtlasSource_5dd4i")
-sources/4 = SubResource("TileSetAtlasSource_lgwnu")
-sources/5 = SubResource("TileSetAtlasSource_flqon")
-sources/6 = SubResource("TileSetAtlasSource_rcqid")
-sources/7 = SubResource("TileSetAtlasSource_1ajci")
+sources/0 = SubResource("TileSetAtlasSource_1acrt")
+sources/1 = SubResource("TileSetAtlasSource_vr8o3")
+sources/2 = SubResource("TileSetAtlasSource_1a85y")
+sources/3 = SubResource("TileSetAtlasSource_hl5e0")
+sources/4 = SubResource("TileSetAtlasSource_engjn")
+sources/5 = SubResource("TileSetAtlasSource_6h3lr")
+sources/6 = SubResource("TileSetAtlasSource_dj67d")
+sources/7 = SubResource("TileSetAtlasSource_6vcge")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8egab"]
 font_size = 67
@@ -190,43 +191,7 @@ autoplay = true
 stream = ExtResource("2_svtp6")
 volume_db = 17.333
 
-[node name="FundoAzul" type="ColorRect" parent="." unique_id=312039996]
-self_modulate = Color(0.9691369, 0.9691369, 0.9691368, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 1.0399998)
-color = Color(0.4862745, 0.8, 0.93333334, 0.8235294)
-
-[node name="Nuvems" type="Node" parent="." unique_id=435682286]
-
-[node name="Nuvem" parent="Nuvems" unique_id=1226984404 instance=ExtResource("1_l6cm7")]
-show_behind_parent = true
-position = Vector2(201.99998, 533)
-scale = Vector2(4.52, 4.52)
-
-[node name="Nuvem4" parent="Nuvems" unique_id=483122829 instance=ExtResource("1_l6cm7")]
-show_behind_parent = true
-position = Vector2(678, 382)
-scale = Vector2(4.52, 4.52)
-
-[node name="Nuvem2" parent="Nuvems" unique_id=1063371393 instance=ExtResource("1_l6cm7")]
-show_behind_parent = true
-position = Vector2(424.99997, 100.99999)
-scale = Vector2(4.52, 4.52)
-
-[node name="Nuvem3" parent="Nuvems" unique_id=426790760 instance=ExtResource("1_l6cm7")]
-show_behind_parent = true
-position = Vector2(1121.9999, 495)
-scale = Vector2(4.52, 4.52)
-
-[node name="Nuvem5" parent="Nuvems" unique_id=1213088971 instance=ExtResource("1_l6cm7")]
-show_behind_parent = true
-position = Vector2(1364, 231)
-scale = Vector2(4.52, 4.52)
+[node name="FundoCeu" parent="." unique_id=1252663915 instance=ExtResource("4_vr8o3")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1978063670]
 z_index = 1
@@ -344,7 +309,7 @@ offset_top = 2.637584
 offset_right = 133.94623
 offset_bottom = 142.63759
 scale = Vector2(0.046979114, 0.046979114)
-texture = ExtResource("23_qywvv")
+texture = ExtResource("23_1a85y")
 
 [node name="Sair" type="TextureButton" parent="Opcoes" unique_id=429604049]
 z_index = 1
@@ -363,6 +328,7 @@ scale = Vector2(0.046979234, 0.046979234)
 texture = ExtResource("22_qywvv")
 
 [node name="AgePopup" type="ColorRect" parent="." unique_id=653899210]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -460,6 +426,55 @@ theme_override_font_sizes/font_size = 66
 text = "CONFIRMAR"
 label_settings = SubResource("LabelSettings_8egab")
 text_direction = 1
+
+[node name="Desativados" type="Node" parent="." unique_id=1040386922]
+
+[node name="FundoAzul" type="ColorRect" parent="Desativados" unique_id=312039996]
+visible = false
+self_modulate = Color(0.9691369, 0.9691369, 0.9691368, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 1.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.0399998)
+color = Color(0.4862745, 0.8, 0.93333334, 0.8235294)
+
+[node name="Nuvems" type="Node" parent="Desativados" unique_id=435682286]
+
+[node name="Nuvem" parent="Desativados/Nuvems" unique_id=1226984404 instance=ExtResource("1_l6cm7")]
+visible = false
+show_behind_parent = true
+position = Vector2(201.99998, 533)
+scale = Vector2(4.52, 4.52)
+
+[node name="Nuvem4" parent="Desativados/Nuvems" unique_id=483122829 instance=ExtResource("1_l6cm7")]
+visible = false
+show_behind_parent = true
+position = Vector2(678, 382)
+scale = Vector2(4.52, 4.52)
+
+[node name="Nuvem2" parent="Desativados/Nuvems" unique_id=1063371393 instance=ExtResource("1_l6cm7")]
+visible = false
+show_behind_parent = true
+position = Vector2(424.99997, 100.99999)
+scale = Vector2(4.52, 4.52)
+
+[node name="Nuvem3" parent="Desativados/Nuvems" unique_id=426790760 instance=ExtResource("1_l6cm7")]
+visible = false
+show_behind_parent = true
+position = Vector2(1121.9999, 495)
+scale = Vector2(4.52, 4.52)
+
+[node name="Nuvem5" parent="Desativados/Nuvems" unique_id=1213088971 instance=ExtResource("1_l6cm7")]
+visible = false
+show_behind_parent = true
+position = Vector2(1364, 231)
+scale = Vector2(4.52, 4.52)
 
 [connection signal="mouse_entered" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_exited"]

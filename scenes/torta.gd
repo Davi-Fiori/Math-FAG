@@ -2,7 +2,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	# Check if the thing that touched the spike is your crab
-	if body.name == "caranguejo":
+	if body.is_in_group("player"):
 		
 		# Check if another spike ALREADY marked the crab as dead this exact frame
 		if not body.has_meta("is_dead"):

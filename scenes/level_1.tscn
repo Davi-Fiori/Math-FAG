@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://daykjf4t8cqyc"]
 
 [ext_resource type="Script" uid="uid://dsffob53fxohj" path="res://scenes/level_1.gd" id="1_6dial"]
-[ext_resource type="PackedScene" uid="uid://chstrdrmocvnm" path="res://scenes/caranguejo.tscn" id="1_bswci"]
 [ext_resource type="Texture2D" uid="uid://22ts267b6bpq" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png" id="2_5xbjy"]
 [ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="2_6dial"]
 [ext_resource type="Texture2D" uid="uid://bq6ypnt4mt65k" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Yellow Button/1.png" id="2_7nomh"]
@@ -749,10 +748,6 @@ z_index = 1
 position = Vector2(37, -79)
 zoom = Vector2(2.985, 2.985)
 
-[node name="caranguejo" parent="." unique_id=630639272 instance=ExtResource("1_bswci")]
-z_index = 2
-position = Vector2(1, -13)
-
 [node name="porta" parent="." unique_id=1806375926 instance=ExtResource("12_go7sj")]
 z_index = 1
 position = Vector2(9, -32)
@@ -771,28 +766,16 @@ tile_set = SubResource("TileSet_fcfvj")
 
 [node name="Nuvem" parent="Tiles" unique_id=1226984404 instance=ExtResource("3_rus8k")]
 modulate = Color(0.96474224, 0.96474224, 0.9647421, 1)
-position = Vector2(241, -68)
+position = Vector2(153, -54)
 
 [node name="Nuvem2" parent="Tiles" unique_id=1978944408 instance=ExtResource("3_rus8k")]
-position = Vector2(326, -127)
+position = Vector2(47, -112)
 
 [node name="Nuvem3" parent="Tiles" unique_id=1790839440 instance=ExtResource("3_rus8k")]
-position = Vector2(469, -80)
+position = Vector2(222, -141)
 
 [node name="Nuvem4" parent="Tiles" unique_id=564069270 instance=ExtResource("3_rus8k")]
-position = Vector2(622, -128)
-
-[node name="Nuvem5" parent="Tiles" unique_id=1191967638 instance=ExtResource("3_rus8k")]
-position = Vector2(755, -57)
-
-[node name="Nuvem6" parent="Tiles" unique_id=2147337473 instance=ExtResource("3_rus8k")]
-position = Vector2(833, -146)
-
-[node name="Nuvem7" parent="Tiles" unique_id=2061952357 instance=ExtResource("3_rus8k")]
-position = Vector2(982, -89)
-
-[node name="Nuvem8" parent="Tiles" unique_id=1735063597 instance=ExtResource("3_rus8k")]
-position = Vector2(1082, -125)
+position = Vector2(-63, -70)
 
 [node name="CoqueiroFundoDireita" parent="Tiles" unique_id=1696995826 instance=ExtResource("4_15mv3")]
 position = Vector2(175, -83)
@@ -820,3 +803,6 @@ position = Vector2(101, -79)
 [node name="barril" parent="Tiles" unique_id=714653696 instance=ExtResource("11_2os1m")]
 position = Vector2(-113, -22)
 scale = Vector2(1.4, 1.4)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2119395901]
+position = Vector2(-29, -18)

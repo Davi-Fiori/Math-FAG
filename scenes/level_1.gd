@@ -10,6 +10,16 @@ var correct_answer = 1
 var can_enter_door = false 
 
 func _ready():
+	# --- DYNAMIC CHARACTER SPAWNING ---
+	# Load the character scene the player chose in the menu
+	var player_scene = load(Global.selected_char_scene)
+	var player_instance = player_scene.instantiate()
+	
+	# Place them at the Marker2D and add them to the game
+	player_instance.global_position = $SpawnPoint.global_position
+	add_child(player_instance)
+	# ----------------------------------
+
 	key.hide()
 	key.process_mode = Node.PROCESS_MODE_DISABLED
 	door.hide()
@@ -21,7 +31,12 @@ func _ready():
 func _on_timer_timeout():
 	# Pass "tempo" so Firebase logs it as levelX_tempo
 	record_error("tempo") 
-	$caranguejo.die()
+	
+	# Encontra o jogador atual (seja Caranguejo ou Joe) e aplica o dano
+	var current_player = get_tree().get_first_node_in_group("player")
+	if current_player:
+		current_player.die()
+		
 	await get_tree().create_timer(2.0).timeout
 	restart_level()
 
@@ -32,7 +47,11 @@ func check_answer(picked_value):
 		spawn_key()
 	else:
 		record_error("erros") 
-		$caranguejo.die()
+		
+		# Encontra o jogador atual (seja Caranguejo ou Joe) e aplica o dano
+		var current_player = get_tree().get_first_node_in_group("player")
+		if current_player:
+			current_player.die()
 
 func spawn_key():
 	key.show()
@@ -49,15 +68,15 @@ func show_door():
 	# The 1 second is up! Unlock the door.
 	can_enter_door = true
 	
-	# Check if the crab is ALREADY standing inside the door!
+	# Check if the player is ALREADY standing inside the door!
 	for body in door.get_overlapping_bodies():
-		if body.name == "caranguejo":
+		if body.is_in_group("player"):
 			door.advance_level(timer.time_left)
 
 # --- DOOR TOUCH LOGIC ---
 func _on_door_body_entered(body):
-	# Check if it is the crab AND the door is fully unlocked
-	if body.name == "caranguejo" and can_enter_door == true:
+	# Check if it is the player AND the door is fully unlocked
+	if body.is_in_group("player") and can_enter_door == true:
 		door.advance_level(timer.time_left)
 
 func restart_level():

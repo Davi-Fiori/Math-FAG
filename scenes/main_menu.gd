@@ -2,8 +2,8 @@ extends Control
 
 @onready var som_botao = $SomBotao
 
-# Grab the Play button label
-@onready var label_jogar = $Botoes/TextureButton/Label 
+# Grab the Play button
+@onready var btn_jogar = $Botoes/TextureButton 
 
 # Grab Options buttons
 @onready var btn_musica = $Opcoes/Musica
@@ -30,7 +30,7 @@ func _ready():
 	if Global.player_age > 0:
 		# Browser already has an ID and Age! Skip pop-up entirely.
 		age_popup.hide() 
-		$Botoes/TextureButton.grab_focus()
+		btn_jogar.grab_focus()
 	else:
 		# First time visitor on this browser instance! Show the pop-up.
 		age_popup.show()
@@ -53,8 +53,8 @@ func _ready():
 		
 	
 	# --- CONTROLLER SUPPORT (Visuals) ---
-	$Botoes/TextureButton.focus_entered.connect(_on_texture_button_mouse_entered)
-	$Botoes/TextureButton.focus_exited.connect(_on_texture_button_mouse_exited)
+	btn_jogar.focus_entered.connect(_on_texture_button_mouse_entered)
+	btn_jogar.focus_exited.connect(_on_texture_button_mouse_exited)
 	
 	btn_musica.focus_entered.connect(_on_musica_mouse_entered)
 	btn_musica.focus_exited.connect(_on_musica_mouse_exited)
@@ -83,7 +83,7 @@ func _on_confirm_button_pressed():
 		
 		# 3. Hide the pop-up and focus the JOGAR button
 		age_popup.hide()
-		$Botoes/TextureButton.grab_focus()
+		btn_jogar.grab_focus()
 	else:
 		# Optional: You could change the name_input placeholder text here to warn them!
 		print("Preencha o nome e selecione uma idade!")
@@ -95,7 +95,7 @@ func _on_texture_button_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 	# 2. Disable the button
-	$Botoes/TextureButton.disabled = true
+	btn_jogar.disabled = true
 	
 	# 3. Play the click sound
 	som_botao.play()
@@ -113,12 +113,12 @@ func _on_texture_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
 func _on_texture_button_mouse_entered():
-	# Darken the text when hovered
-	label_jogar.modulate = Color(0.758, 0.758, 0.758, 1.0)
+	# Darken the ENTIRE button (Texture + Label) when hovered
+	btn_jogar.modulate = Color(0.758, 0.758, 0.758, 1.0)
 
 func _on_texture_button_mouse_exited():
-	# Return text to white when mouse leaves
-	label_jogar.modulate = Color(1.0, 1.0, 1.0)
+	# Return button to normal color when mouse leaves
+	btn_jogar.modulate = Color(1.0, 1.0, 1.0)
 
 # --- MUSIC BUTTON ---
 

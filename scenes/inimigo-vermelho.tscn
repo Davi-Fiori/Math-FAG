@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bryo3b0m5p3n6"]
+
+[ext_resource type="Script" uid="uid://bil3hni8jtvfe" path="res://scenes/inimigo_vermelho.gd" id="1_7ok0y"]
+[ext_resource type="Texture2D" uid="uid://dhkv0rxd7bsfy" path="res://assets/inimigo-vermelho/1.png" id="1_fh0ex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uvu3"]
+size = Vector2(13, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uvu3"]
+atlas = ExtResource("1_fh0ex")
+region = Rect2(3, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmrcq"]
+atlas = ExtResource("1_fh0ex")
+region = Rect2(83, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_617r0"]
+atlas = ExtResource("1_fh0ex")
+region = Rect2(35, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ok0y"]
+atlas = ExtResource("1_fh0ex")
+region = Rect2(3, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxafp"]
+atlas = ExtResource("1_fh0ex")
+region = Rect2(19, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh0ex"]
+atlas = ExtResource("1_fh0ex")
+region = Rect2(51, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0wu4"]
+atlas = ExtResource("1_fh0ex")
+region = Rect2(35, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab33y"]
+atlas = ExtResource("1_fh0ex")
+region = Rect2(51, 17, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrq3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uvu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmrcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_617r0")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ok0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxafp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh0ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0wu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab33y")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nrq3u"]
+radius = 6.756739
+
+[node name="RedEnemy" type="CharacterBody2D" unique_id=1793402138]
+z_index = 1
+scale = Vector2(1.4800038, 1.4800038)
+collision_mask = 2
+script = ExtResource("1_7ok0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=933304513]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_3uvu3")
+
+[node name="EdgeDetector" type="RayCast2D" parent="." unique_id=1156220815]
+position = Vector2(-11.75, 0)
+scale = Vector2(0.9999999, 0.9999999)
+target_position = Vector2(0, 20)
+collision_mask = 2
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1554433358]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot" unique_id=1651949041]
+sprite_frames = SubResource("SpriteFrames_nrq3u")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1099619642]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=73190407]
+shape = SubResource("CircleShape2D_nrq3u")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

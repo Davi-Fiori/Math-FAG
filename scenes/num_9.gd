@@ -7,7 +7,7 @@ func _ready():
 	add_to_group("numbers")
 
 func _on_body_entered(body):
-	if body.name == "caranguejo": # (or whatever your crab's exact name is!)
+	if body.is_in_group("player"):
 		# Tells the level what number was grabbed
 		get_tree().current_scene.check_answer(value)
 		

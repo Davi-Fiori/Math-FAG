@@ -3,7 +3,7 @@ extends Area2D
 @onready var anim = $Sprite2D # This matches your AnimatedSprite2D node name
 
 func _on_body_entered(body):
-	if body.name == "caranguejo":
+	if body.is_in_group("player"):
 		# Disable collision so the player doesn't trigger it twice
 		$CollisionShape2D.set_deferred("disabled", true)
 		

@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://xdgqelgqoxs3" path="res://icons/Clock.png" id="4_w5nkq"]
 [ext_resource type="PackedScene" uid="uid://cpsf0rvwpdcey" path="res://scenes/porta.tscn" id="5_w5nkq"]
 [ext_resource type="PackedScene" uid="uid://fgvu33i50iqc" path="res://scenes/nuvem.tscn" id="9_5kn0t"]
-[ext_resource type="PackedScene" uid="uid://chstrdrmocvnm" path="res://scenes/caranguejo.tscn" id="9_8uepa"]
 [ext_resource type="Texture2D" uid="uid://darvetyvk7e60" path="res://pixil-frame-0 (13).png" id="9_ha73p"]
 [ext_resource type="Texture2D" uid="uid://bc6xlmg53om3v" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="10_bjw4u"]
 [ext_resource type="Texture2D" uid="uid://dhx7k8bpgtgam" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="11_1rxxv"]
@@ -1227,10 +1226,6 @@ vertical_alignment = 1
 wait_time = 90.0
 autostart = true
 
-[node name="caranguejo" parent="." unique_id=630639272 instance=ExtResource("9_8uepa")]
-z_index = 2
-position = Vector2(-41, 25)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=4080970]
 z_index = 2
 position = Vector2(33.695, -64.41)
@@ -1240,19 +1235,20 @@ limit_smoothed = true
 [node name="Nuvems" type="Node" parent="." unique_id=745641840]
 
 [node name="Nuvem2" parent="Nuvems" unique_id=1978944408 instance=ExtResource("9_5kn0t")]
-position = Vector2(292, -139)
+position = Vector2(-10, -135)
+end_left_x = -227.0
 
 [node name="Nuvem3" parent="Nuvems" unique_id=1790839440 instance=ExtResource("9_5kn0t")]
-position = Vector2(426, -63)
+position = Vector2(119, -58)
+end_left_x = -227.0
 
 [node name="Nuvem4" parent="Nuvems" unique_id=564069270 instance=ExtResource("9_5kn0t")]
-position = Vector2(540, -164)
+position = Vector2(219, -138)
+end_left_x = -227.0
 
 [node name="Nuvem7" parent="Nuvems" unique_id=2061952357 instance=ExtResource("9_5kn0t")]
-position = Vector2(837, -140)
-
-[node name="Nuvem8" parent="Nuvems" unique_id=1735063597 instance=ExtResource("9_5kn0t")]
-position = Vector2(720, -52)
+position = Vector2(-107, -32)
+end_left_x = -227.0
 
 [node name="Elementos" type="Node" parent="." unique_id=597243379]
 
@@ -1270,12 +1266,6 @@ position = Vector2(-64, 9)
 [node name="CoqueiroFrente" parent="Elementos" unique_id=545297707 instance=ExtResource("16_ema3p")]
 position = Vector2(51, -144)
 
-[node name="CoqueiroFundoDireita" parent="Elementos" unique_id=1696995826 instance=ExtResource("17_8uepa")]
-z_index = 1
-position = Vector2(23, 6)
-rotation = 3.1117702
-scale = Vector2(0.98088247, -0.9204366)
-
 [node name="barco_Movimento_Direita" parent="Elementos" unique_id=721846387 instance=ExtResource("17_ema3p")]
 position = Vector2(-74, -33)
 scale = Vector2(0.31999785, 0.31999785)
@@ -1284,8 +1274,13 @@ scale = Vector2(0.31999785, 0.31999785)
 light_mask = 2
 visibility_layer = 2
 position = Vector2(37, 18.000002)
-rotation = -3.1415927
+rotation = 3.1415925
 scale = Vector2(0.43999934, -0.43999934)
+
+[node name="CoqueiroFundoDireita" parent="Elementos" unique_id=1696995826 instance=ExtResource("17_8uepa")]
+position = Vector2(23, 6)
+rotation = 3.1117702
+scale = Vector2(0.98088247, -0.9204366)
 
 [node name="Tiles" type="Node" parent="." unique_id=869529798]
 
@@ -1334,3 +1329,6 @@ scale = Vector2(0.9200006, 0.9200006)
 z_index = 1
 position = Vector2(70, -28)
 scale = Vector2(1.1386524, 1.1386524)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1199201304]
+position = Vector2(-43, 16)

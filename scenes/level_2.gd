@@ -10,6 +10,11 @@ var correct_answer = 5
 var can_enter_door = false 
 
 func _ready():
+	var player_scene = load(Global.selected_char_scene)
+	var player_instance = player_scene.instantiate()
+	player_instance.global_position = $SpawnPoint.global_position
+	add_child(player_instance)
+
 	key.hide()
 	key.process_mode = Node.PROCESS_MODE_DISABLED
 	door.hide()
@@ -19,9 +24,10 @@ func _ready():
 	door.body_entered.connect(_on_door_body_entered)
 
 func _on_timer_timeout():
-	# Pass "tempo" so Firebase logs it as levelX_tempo
 	record_error("tempo") 
-	$caranguejo.die()
+	var current_player = get_tree().get_first_node_in_group("player")
+	if current_player:
+		current_player.die()
 	await get_tree().create_timer(2.0).timeout
 	restart_level()
 
@@ -32,7 +38,9 @@ func check_answer(picked_value):
 		spawn_key()
 	else:
 		record_error("erros") 
-		$caranguejo.die()
+		var current_player = get_tree().get_first_node_in_group("player")
+		if current_player:
+			current_player.die()
 
 func spawn_key():
 	key.show()
@@ -47,11 +55,11 @@ func show_door():
 	can_enter_door = true
 	
 	for body in door.get_overlapping_bodies():
-		if body.name == "caranguejo":
+		if body.is_in_group("player"):
 			door.advance_level(timer.time_left)
 
 func _on_door_body_entered(body):
-	if body.name == "caranguejo" and can_enter_door == true:
+	if body.is_in_group("player") and can_enter_door == true:
 		door.advance_level(timer.time_left)
 
 func restart_level():
@@ -61,9 +69,6 @@ func _process(_delta):
 	time_label.text = str(int(timer.time_left))
 	
 func record_error(error_type: String):
-	# Automatically figure out if this is level_1, level_2, etc.
 	var current_path = get_tree().current_scene.scene_file_path
 	var level_number = current_path.get_file().get_basename().trim_prefix("level_").to_int()
-	
-	# Send both the level number AND the type of error to Global!
 	Global.log_error(level_number, error_type)

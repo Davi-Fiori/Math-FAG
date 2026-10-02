@@ -23,6 +23,10 @@ Global="*uid://vb1ivfyiw0os"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+player="personagens selecionaveis no jogo"
+
 [input]
 
 ui_accept={

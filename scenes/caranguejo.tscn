@@ -39,7 +39,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_uxh1f")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dead",
 "speed": 9.0
 }, {
@@ -47,7 +47,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_1gejh")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fall",
 "speed": 9.0
 }, {
@@ -58,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_e4856")
 }],
-"loop": false,
+"loop": 0,
 "name": &"ground",
 "speed": 9.0
 }, {
@@ -90,7 +90,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_j5ps2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 9.0
 }, {
@@ -104,7 +104,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_e4856")
 }],
-"loop": false,
+"loop": 0,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_uh8pl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 9.0
 }]
@@ -135,7 +135,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4alki"]
 radius = 13.0
 
-[node name="caranguejo" type="CharacterBody2D" unique_id=630639272]
+[node name="caranguejo" type="CharacterBody2D" unique_id=630639272 groups=["player"]]
 z_index = 1
 collision_mask = 14
 script = ExtResource("1_bipby")

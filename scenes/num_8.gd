@@ -7,7 +7,7 @@ func _ready():
 	add_to_group("numbers")
 
 func _on_body_entered(body):
-	if body.name == "caranguejo":
+	if body.is_in_group("player"):
 		# Avisa a fase principal qual foi o valor coletado
 		get_tree().current_scene.check_answer(value)
 		
