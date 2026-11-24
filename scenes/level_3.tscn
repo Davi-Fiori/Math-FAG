@@ -1,12 +1,18 @@
 [gd_scene format=4 uid="uid://ca1kh4here1p4"]
 
 [ext_resource type="Script" uid="uid://b7mnifrg7ar6l" path="res://scenes/level_3.gd" id="1_q7pjq"]
+[ext_resource type="PackedScene" uid="uid://dwmf0q5p7fn3y" path="res://scenes/label_relogio.tscn" id="2_bjw4u"]
 [ext_resource type="Texture2D" uid="uid://bq6ypnt4mt65k" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Yellow Button/1.png" id="2_wa6ex"]
 [ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="3_sx8yt"]
 [ext_resource type="Texture2D" uid="uid://xdgqelgqoxs3" path="res://icons/Clock.png" id="4_w5nkq"]
 [ext_resource type="PackedScene" uid="uid://cpsf0rvwpdcey" path="res://scenes/porta.tscn" id="5_w5nkq"]
+[ext_resource type="Texture2D" uid="uid://ubpoj0ifpamo" path="res://icons/Pause.png" id="6_1rxxv"]
+[ext_resource type="Texture2D" uid="uid://dvy5lymydm067" path="res://icons/Play.png" id="7_ld1e4"]
+[ext_resource type="Texture2D" uid="uid://bap60kx0wy3jb" path="res://icons/List.png" id="8_detxl"]
 [ext_resource type="PackedScene" uid="uid://fgvu33i50iqc" path="res://scenes/nuvem.tscn" id="9_5kn0t"]
+[ext_resource type="PackedScene" uid="uid://badg5ne1sa02m" path="res://scenes/painel_pause.tscn" id="9_58p72"]
 [ext_resource type="Texture2D" uid="uid://darvetyvk7e60" path="res://pixil-frame-0 (13).png" id="9_ha73p"]
+[ext_resource type="PackedScene" uid="uid://opciariygskf" path="res://scenes/char_select.tscn" id="10_365g5"]
 [ext_resource type="Texture2D" uid="uid://bc6xlmg53om3v" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="10_bjw4u"]
 [ext_resource type="Texture2D" uid="uid://dhx7k8bpgtgam" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="11_1rxxv"]
 [ext_resource type="Texture2D" uid="uid://dmdchb7dboq6u" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png" id="12_ld1e4"]
@@ -22,15 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://8e3jedsn3yjo" path="res://scenes/num_2.tscn" id="20_k5r18"]
 [ext_resource type="PackedScene" uid="uid://bb6ovjcqplhv6" path="res://scenes/num_1.tscn" id="21_w5nkq"]
 [ext_resource type="PackedScene" uid="uid://cyat7mx8h5lbv" path="res://scenes/chave.tscn" id="22_k5r18"]
-
-[sub_resource type="Environment" id="Environment_w5nkq"]
-background_mode = 3
-adjustment_enabled = true
-adjustment_contrast = 1.05
-adjustment_saturation = 1.25
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_guvtl"]
-load_path = "res://.godot/imported/1.png-790e4b8670bd58e0d304165a77a499c6.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
 texture = ExtResource("10_bjw4u")
@@ -1059,168 +1056,207 @@ sources/1 = SubResource("TileSetAtlasSource_vcx5n")
 sources/2 = SubResource("TileSetAtlasSource_56dhn")
 sources/3 = SubResource("TileSetAtlasSource_ax3dk")
 
+[sub_resource type="Environment" id="Environment_w5nkq"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.25
+
 [node name="Level3" type="Node2D" unique_id=1820141578]
 position = Vector2(-18, -4)
 script = ExtResource("1_q7pjq")
 
-[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=20034142]
-environment = SubResource("Environment_w5nkq")
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1816131660]
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=456158037]
+[node name="label_relogio" parent="HUD" unique_id=1733220363 instance=ExtResource("2_bjw4u")]
+position = Vector2(1117, 65)
+scale = Vector2(3.0399902, 3.2923756)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=2093066865]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=1102553841]
 offset_left = 12.0
 offset_top = 8.0
 offset_right = 328.0
 offset_bottom = 68.0
 
-[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer" unique_id=530342254]
+[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1322379593]
 self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
 layout_mode = 2
 texture = ExtResource("2_wa6ex")
 expand_mode = 2
 
-[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect" unique_id=1228753765]
+[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect" unique_id=1524916960]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = -22.999998
+offset_left = -23.0
+offset_top = -4.0
 offset_right = 106.0
-offset_bottom = 64.0
-scale = Vector2(0.8444175, 0.8289044)
-pivot_offset = Vector2(-23.809534, -23.809532)
+offset_bottom = 60.0
+scale = Vector2(0.8399997, 0.8399997)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_sx8yt")
 theme_override_font_sizes/font_size = 49
 text = "9"
 horizontal_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1852167826]
-self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+[node name="TextureRect2" type="TextureRect" parent="HUD/HBoxContainer" unique_id=2042771127]
+self_modulate = Color(0.8089983, 0.8089983, 0.80899817, 1)
 layout_mode = 2
 texture = ExtResource("2_wa6ex")
 expand_mode = 2
 
-[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect2" unique_id=1896063261]
+[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect2" unique_id=1987652915]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = -21.0
-offset_right = 108.0
-offset_bottom = 64.0
+offset_left = -24.0
+offset_top = -4.0
+offset_right = 105.0
+offset_bottom = 60.0
 scale = Vector2(0.8399997, 0.8399997)
-pivot_offset = Vector2(-16.666674, -33.333344)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_sx8yt")
 theme_override_font_sizes/font_size = 49
 text = "-"
 horizontal_alignment = 1
 
-[node name="TextureRect3" type="TextureRect" parent="HUD/HBoxContainer" unique_id=281111098]
-self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+[node name="TextureRect3" type="TextureRect" parent="HUD/HBoxContainer" unique_id=853890642]
+self_modulate = Color(0.80049086, 0.8004908, 0.8004906, 1)
 layout_mode = 2
 texture = ExtResource("2_wa6ex")
 expand_mode = 2
 
-[node name="interrogacao" type="Label" parent="HUD/HBoxContainer/TextureRect3" unique_id=191060195]
+[node name="interrogacao" type="Label" parent="HUD/HBoxContainer/TextureRect3" unique_id=2041240083]
 z_index = 1
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -41.0
-offset_top = -34.0
-offset_right = -4.0
-offset_bottom = 30.0
-grow_horizontal = 0
-grow_vertical = 2
+layout_mode = 0
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 107.0
+offset_bottom = 60.0
 scale = Vector2(0.8399997, 0.8399997)
-pivot_offset = Vector2(-17.857147, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_sx8yt")
 theme_override_font_sizes/font_size = 49
 text = "?"
 horizontal_alignment = 1
 
-[node name="TextureRect4" type="TextureRect" parent="HUD/HBoxContainer" unique_id=901968110]
-self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+[node name="TextureRect4" type="TextureRect" parent="HUD/HBoxContainer" unique_id=15060861]
+self_modulate = Color(0.7792914, 0.7792914, 0.7792912, 1)
 layout_mode = 2
 texture = ExtResource("2_wa6ex")
 expand_mode = 2
 
-[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect4" unique_id=619816695]
+[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect4" unique_id=1743890017]
 z_index = 1
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -15.5
-offset_top = -32.0
-offset_right = 15.5
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = -24.0
+offset_top = -5.0
+offset_right = 105.0
+offset_bottom = 59.0
 scale = Vector2(0.8399997, 0.8399997)
-pivot_offset = Vector2(13.690475, -13.095245)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_sx8yt")
 theme_override_font_sizes/font_size = 49
 text = "="
 horizontal_alignment = 1
 
-[node name="TextureRect5" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1723451754]
-self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+[node name="TextureRect5" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1973292821]
+self_modulate = Color(0.79199904, 0.79199916, 0.7919989, 1)
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_guvtl")
+texture = ExtResource("2_wa6ex")
 expand_mode = 2
-flip_h = true
 
-[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect5" unique_id=529175977]
+[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect5" unique_id=1732027294]
 z_index = 1
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -18.5
-offset_top = -32.0
-offset_right = 18.5
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = -12.0
+offset_top = -4.0
+offset_right = 117.0
+offset_bottom = 60.0
 scale = Vector2(0.8399997, 0.8399997)
-pivot_offset = Vector2(14.880981, -13.095245)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_sx8yt")
 theme_override_font_sizes/font_size = 49
-text = "6"
+text = "6 "
 horizontal_alignment = 1
 
-[node name="relogio" type="TextureRect" parent="HUD" unique_id=889127296]
-offset_left = 1035.0
-offset_top = 5.0
-offset_right = 1155.0
-offset_bottom = 125.0
-scale = Vector2(0.32, 0.32)
+[node name="relogio" type="TextureRect" parent="HUD" unique_id=898248458]
+offset_left = 1042.0001
+offset_top = 77.00001
+offset_right = 1162.0001
+offset_bottom = 197.0
+scale = Vector2(0.24157733, 0.24157733)
 texture = ExtResource("4_w5nkq")
 
-[node name="TimeLabel" type="Label" parent="HUD" unique_id=1982155607]
-offset_left = 1084.0
-offset_top = -4.0
-offset_right = 1124.0
-offset_bottom = 46.0
+[node name="TimeLabel" type="Label" parent="HUD" unique_id=1841927983]
+offset_left = 1083.0
+offset_top = 68.0
+offset_right = 1123.0
+offset_bottom = 118.0
+scale = Vector2(0.8799902, 0.8799902)
 theme_override_fonts/font = ExtResource("3_sx8yt")
 theme_override_font_sizes/font_size = 38
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Menus" type="HBoxContainer" parent="HUD" unique_id=2030533444]
+process_mode = 3
+offset_left = 1033.0
+offset_top = 12.0
+offset_right = 1125.0
+offset_bottom = 52.0
+scale = Vector2(3.3295574, 3.3295574)
+
+[node name="pause" type="TextureButton" parent="HUD/Menus" unique_id=477852333]
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+layout_mode = 2
+texture_normal = ExtResource("2_wa6ex")
+
+[node name="pause_icon" type="TextureRect" parent="HUD/Menus/pause" unique_id=2057783670]
+layout_mode = 0
+offset_left = 4.3691406
+offset_top = 3.1470032
+offset_right = 144.36914
+offset_bottom = 143.147
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("6_1rxxv")
+
+[node name="play_icon" type="TextureRect" parent="HUD/Menus/pause" unique_id=2031669703]
+visible = false
+layout_mode = 0
+offset_left = 4.805664
+offset_top = 2.703064
+offset_right = 144.80566
+offset_bottom = 142.70306
+scale = Vector2(0.035478584, 0.04749219)
+texture = ExtResource("7_ld1e4")
+
+[node name="botaomenu" type="TextureButton" parent="HUD/Menus" unique_id=1396570352]
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+layout_mode = 2
+texture_normal = ExtResource("2_wa6ex")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Menus/botaomenu" unique_id=1418125019]
+layout_mode = 0
+offset_left = 3.9003096
+offset_top = 3.1474025
+offset_right = 143.90031
+offset_bottom = 143.1474
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("8_detxl")
+
+[node name="Painel_pause" parent="HUD" unique_id=1578342202 instance=ExtResource("9_58p72")]
+visible = false
+
+[node name="CharSelect" parent="HUD" unique_id=1033045445 instance=ExtResource("10_365g5")]
+visible = false
+offset_left = -389.0
+offset_top = -17.0
+offset_right = -389.0
+offset_bottom = -17.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1493917879]
 wait_time = 90.0
@@ -1308,7 +1344,7 @@ scale = Vector2(0.6399981, 0.6399981)
 tile_map_data = PackedByteArray("AADv/wMAAQAHAAgAAADv/wQAAQAHAAgAAADv/wIAAQAHAAgAAADv/wEAAQAGAAEAAADw/wEAAQAHAAEAAADw/wIAAQAHAAgAAADw/wMAAQAHAAgAAADw/wQAAQAHAAgAAADx//j/AQAGAAAAAADx//n/AQAGAAAAAADx//r/AQAGAAAAAADx//v/AQAGAAAAAADx//z/AQAAAAQAAADx//3/AQAAAAUAAADx//7/AQAAAAYAAADx////AQAAAAcAAADx/wAAAQAIAAAAAADx/wIAAQAHAAgAAADx/wMAAQAHAAgAAADx/wQAAQAHAAgAAADy//j/AQABAAAAAADy//n/AQABAAEAAADy//r/AQABAAIAAADy//v/AQABAAMAAADy//z/AQABAAQAAADy//3/AQABAAUAAADy//7/AQABAAYAAADy////AQABAAcAAADy/wAAAQAJAAAAAADy/wIAAQAHAAgAAADy/wMAAQAHAAgAAADy/wQAAQAHAAgAAADz//j/AQACAAAAAADz//n/AQACAAEAAADz//r/AQACAAIAAADz//v/AQACAAMAAADz//z/AQACAAQAAADz//3/AQACAAUAAADz//7/AQACAAYAAADz////AQACAAcAAADz/wAAAQAKAAAAAADz/wIAAQAHAAgAAADz/wMAAQAHAAgAAADz/wQAAQAHAAgAAAD0//j/AQADAAAAAAD0//n/AQADAAEAAAD0//r/AQADAAIAAAD0//v/AQADAAMAAAD0//z/AQADAAQAAAD0//3/AQADAAUAAAD0//7/AQAHAAgAAAD0////AQAHAAgAAAD0/wAAAQAHAAgAAAD0/wEAAQAHAAgAAAD0/wIAAQAHAAgAAAD0/wMAAQAHAAgAAAD0/wQAAQAHAAgAAAD1//j/AQAEAAAAAAD1//n/AQAEAAEAAAD1//r/AQAEAAIAAAD1//v/AQAEAAMAAAD1//z/AQAEAAQAAAD1//3/AQAEAAUAAAD1//7/AQAHAAgAAAD1////AQAHAAgAAAD1/wAAAQAHAAgAAAD1/wEAAQAHAAgAAAD1/wIAAQAHAAgAAAD1/wMAAQAHAAgAAAD1/wQAAQAHAAgAAAD2//j/AQAFAAAAAAD2//n/AQAHAAgAAAD2//r/AQAHAAgAAAD2//v/AQAHAAgAAAD2//z/AQAFAAQAAAD2//3/AQAFAAUAAAD2//7/AQAHAAgAAAD2////AQAHAAgAAAD2/wAAAQAHAAgAAAD2/wEAAQAHAAgAAAD2/wIAAQAHAAgAAAD2/wMAAQAHAAgAAAD2/wQAAQAHAAgAAAD3//f/AQAHAAgAAAD3//j/AQAHAAgAAAD3//n/AQAHAAgAAAD3//r/AQAHAAgAAAD3//v/AQAHAAgAAAD3//z/AQAHAAgAAAD3//3/AQAHAAgAAAD3//7/AQAGAAcAADD3////AQAGAAcAADD3/wAAAQAGAAcAADD3/wEAAQAHAAgAAAD3/wIAAQAHAAgAAAD3/wMAAQAHAAgAAAD3/wQAAQAHAAgAAAD4//f/AQAHAAgAAAD4//j/AQAHAAgAAAD5//f/AQAHAAgAAAD5//j/AQAHAAgAAAD6//f/AQAHAAgAAAD6//j/AQAHAAgAAAD7//f/AQAHAAgAAAD7//j/AQAHAAgAAAD8//f/AQAHAAgAAAD8//j/AQAHAAgAAAD9//f/AQAHAAgAAAD9//j/AQAHAAgAAAD+//f/AQAHAAgAAAD+//j/AQAHAAgAAAD///f/AQAHAAgAAAD///j/AQAHAAgAAAAAAPf/AQAHAAgAAAAAAPj/AQAHAAgAAAABAPf/AQAHAAgAAAABAPj/AQAHAAgAAFACAPf/AQAHAAgAAAACAPj/AQAHAAgAAFADAPf/AQAHAAgAAAADAPj/AQAHAAgAAFAEAPf/AQAHAAgAAAAEAPj/AQAHAAgAAFAFAPf/AQAHAAgAAAAFAPj/AQAHAAgAAFAGAPf/AQAHAAgAAAAGAPj/AQAGAAcAAAAGAP//AQAGAAcAAAAGAAAAAQAGAAcAAAAGAAEAAQAGAAcAAAAGAAIAAQAGAAcAAAAGAAMAAQAGAAcAAAAGAAQAAQAHAAgAAAAHAPf/AQAHAAgAAAAHAPj/AQAHAAgAAAAHAPn/AQAHAAgAAAAHAPr/AQAHAAgAAAAHAPv/AQAGAAYAAAAHAPz/AQAGAAYAAAAHAP3/AQAGAAYAAAAHAP7/AQAGAAYAAAAHAP//AQAGAAYAAAAHAAAAAQASAAAAAFAHAAEAAQATAAAAAFAHAAIAAQAUAAAAAFAHAAMAAQAHAAgAAAAHAAQAAQAHAAgAAAAIAPf/AQAHAAgAAAAIAPj/AQAHAAgAAAAIAPn/AQAHAAgAAAAIAPr/AQAHAAgAAAAIAPv/AQAGAAYAAAAIAPz/AQAGAAYAAAAIAP3/AQAGAAYAAAAIAP7/AQAGAAYAAAAIAP//AQAGAAYAAAAIAAAAAQAGAAYAAAAIAAEAAQAHAAgAAAAIAAIAAQAHAAgAAAAIAAMAAQAHAAgAAAAIAAQAAQAHAAgAAAAJAPf/AQAHAAgAAAAJAPj/AQAHAAgAAAAJAPn/AQAHAAgAAAAJAPr/AQAHAAgAAAAJAPv/AQAHAAgAAAAJAPz/AQAGAAYAAAAJAP3/AQAGAAYAAAAJAP7/AQAGAAYAAAAJAP//AQAGAAYAAAAJAAAAAQAGAAYAAAAJAAEAAQAHAAgAAAAJAAIAAQAHAAgAAAAKAPj/AQAZAAAAAAAKAPn/AQAZAAEAAAAKAPr/AQAHAAgAAAAKAPv/AQAHAAgAAAAKAPz/AQAGAAYAAAAKAP3/AQAGAAYAAAAKAP7/AQAGAAYAAAAKAP//AQAGAAYAAAAKAAAAAQAGAAYAAAALAPj/AQAaAAAAAAALAPn/AQAaAAEAAAALAPr/AQAHAAgAAAALAPv/AQAHAAgAAAALAPz/AQAGAAYAAAALAP3/AQAGAAYAAAALAP7/AQAGAAYAAAALAP//AQAGAAYAAAALAAAAAQAGAAYAAAAMAPj/AQAbAAAAAAAMAPn/AQAbAAEAAAAMAPr/AQAHAAgAAAAMAPv/AQAHAAgAAAAMAPz/AQAGAAYAAAAMAP3/AQAGAAYAAAAMAP7/AQAGAAYAAAAMAP//AQAGAAYAAAAMAAAAAQAGAAYAAAANAPj/AQAcAAAAAAANAPn/AQAcAAEAAAANAPr/AQAHAAgAAAANAPv/AQAHAAgAAAANAPz/AQAGAAYAAAANAP3/AQAGAAYAAAANAP7/AQAGAAYAAAANAP//AQAGAAYAAAANAAAAAQAGAAYAAAAOAPj/AQAdAAAAAAAOAPn/AQAdAAEAAAAOAPr/AQAdAAIAAAAOAPv/AQAdAAMAAAAOAPz/AQAdAAQAAAAOAP3/AQAdAAUAAAAOAP7/AQAdAAYAAAAOAP//AQAdAAcAAAAOAAAAAQAdAAgAAAAGAPn/AQAGAAcAAAAGAPr/AQAGAAcAAAAGAPv/AQAGAAcAAAAGAPz/AQAGAAcAAAAGAP3/AQAGAAcAAAAGAP7/AQAGAAcAAAD4//n/AQAHAAgAAAD4//r/AQAHAAgAAAD4//v/AQAHAAgAAAD4//z/AQAHAAgAAAD4//3/AQAHAAgAAAD4//7/AQAHAAgAAGD4////AQAHAAgAAGD4/wAAAQAHAAgAAGD4/wEAAQAHAAgAAGD4/wIAAQAHAAgAAGD4/wMAAQAHAAgAAGAFAPn/AQAHAAgAAFAFAPr/AQAHAAgAAFAFAPv/AQAHAAgAAFAFAPz/AQAHAAgAAFAFAP3/AQAHAAgAAFAFAP7/AQAGAAcAAAAFAP//AQAHAAgAADAFAAAAAQAHAAgAADAFAAEAAQAHAAgAADAFAAIAAQAHAAgAADAFAAMAAQAHAAgAADD4/wQAAQADAAcAAAD5/wQAAQADAAcAAAD6/wQAAQADAAcAAAD7/wQAAQADAAcAAAD8/wQAAQADAAcAAAD+/wQAAQADAAcAAAD9/wQAAQADAAcAAAD//wQAAQADAAcAAAABAAQAAQADAAcAAAAAAAQAAQADAAcAAAACAAQAAQADAAcAAAADAAQAAQADAAcAAAAEAAQAAQADAAcAAAAFAAQAAQADAAcAAAD5//n/AQAHAAgAAAD5//r/AQAHAAgAAAD5//v/AQAHAAgAAAD5//z/AQAKAAQAAAD5//3/AQAKAAUAAAD5//7/AQAPAAEAAGD5////AQAOAAEAAGD5/wAAAQANAAEAAGD5/wEAAQAHAAgAAGD5/wIAAQAHAAgAAGD5/wMAAQAHAAgAAGD6//n/AQAHAAgAAAD6//r/AQAHAAgAAAD6//v/AQALAAMAAAD6//z/AQALAAQAAAD6//3/AQALAAUAAAD6//7/AQAPAAIAAGD6////AQAOAAIAAGD6/wAAAQANAAIAAGD6/wEAAQAMAAIAAGD6/wIAAQAHAAgAAGD6/wMAAQAHAAgAAGD7//n/AQAHAAgAAAD7//r/AQAMAAIAAAD7//v/AQAMAAMAAAD7//z/AQAMAAQAAAD7//3/AQAMAAUAAAD7//7/AQAPAAMAAGD7////AQAOAAMAAGD7/wAAAQANAAMAAGD7/wEAAQAMAAMAAGD7/wIAAQALAAMAAGD7/wMAAQAHAAgAAGD8//n/AQANAAEAAAD8//r/AQANAAIAAAD8//v/AQANAAMAAAD8//z/AQANAAQAAAD8//3/AQANAAUAAAD8//7/AQAPAAQAAGD8////AQAOAAQAAGD8/wAAAQANAAQAAGD8/wEAAQAMAAQAAGD8/wIAAQALAAQAAGD8/wMAAQAKAAQAAGD9//n/AQAOAAEAAAD9//r/AQAOAAIAAAD9//v/AQAOAAMAAAD9//z/AQAOAAQAAAD9//3/AQAOAAUAAAD9//7/AQARAAYAADD9////AQARAAUAADD9/wAAAQARAAQAADD9/wEAAQARAAMAADD9/wIAAQARAAIAADD9/wMAAQARAAEAADD+//n/AQAPAAEAAAD+//r/AQAPAAIAAAD+//v/AQAPAAMAAAD+//z/AQAPAAQAAAD+//3/AQAPAAUAAAD+//7/AQAQAAYAADD+////AQAQAAUAADD+/wAAAQAQAAQAADD+/wEAAQAQAAMAADD+/wIAAQAQAAIAADD+/wMAAQAQAAEAADD///n/AQAQAAEAAAD///r/AQAQAAIAAAD///v/AQAQAAMAAAD///z/AQAQAAQAAAD///3/AQAQAAUAAAD///7/AQAPAAYAADD/////AQAPAAUAADD//wAAAQAPAAQAADD//wEAAQAPAAMAADD//wIAAQAPAAIAADD//wMAAQAPAAEAADAAAPn/AQARAAEAAAAAAPr/AQARAAIAAAAAAPv/AQARAAMAAAAAAPz/AQARAAQAAAAAAP3/AQARAAUAAAAAAP7/AQAOAAYAADAAAP//AQAOAAUAADAAAAAAAQAOAAQAADAAAAEAAQAOAAMAADAAAAIAAQAOAAIAADAAAAMAAQAOAAEAADABAPn/AQAKAAQAAFABAPr/AQALAAQAAFABAPv/AQAMAAQAAFABAPz/AQANAAQAAFABAP3/AQAOAAQAAFABAP7/AQANAAYAADABAP//AQANAAUAADABAAAAAQANAAQAADABAAEAAQANAAMAADABAAIAAQANAAIAADABAAMAAQANAAEAADACAPn/AQAHAAgAAFACAPr/AQALAAMAAFACAPv/AQAMAAMAAFACAPz/AQANAAMAAFACAP3/AQAOAAMAAFACAP7/AQAMAAYAADACAP//AQAMAAUAADACAAAAAQAMAAQAADACAAEAAQAMAAMAADACAAIAAQAMAAIAADACAAMAAQAHAAgAADADAPn/AQAHAAgAAFADAPr/AQAHAAgAAFADAPv/AQAMAAIAAFADAPz/AQANAAIAAFADAP3/AQAOAAIAAFADAP7/AQAMAAQAADADAP//AQALAAUAADADAAAAAQALAAQAADADAAEAAQALAAMAADADAAIAAQAHAAgAADADAAMAAQAHAAgAADAEAPn/AQAHAAgAAFAEAPr/AQAHAAgAAFAEAPv/AQAHAAgAAFAEAPz/AQANAAEAAFAEAP3/AQAOAAEAAFAEAP7/AQAQAAMAAGAEAP//AQAKAAUAADAEAAAAAQAKAAQAADAEAAEAAQAHAAgAADAEAAIAAQAHAAgAADAEAAMAAQAHAAgAADDv/wAAAQAGAAAAAADw/wAAAQAHAAAAAADx/wEAAQAIAAEAAADy/wEAAQAJAAEAAADz/wEAAQAKAAEAAAAKAAEAAQAGAAAAAAALAAEAAQAGAAAAAAAMAAEAAQAGAAAAAAANAAEAAQAGAAAAAAAOAAEAAQAGAAAAAAAJAAMAAQAGAAAAAAAJAAQAAQAGAAAAAAAKAAIAAQAGAAAAAAAKAAMAAQAGAAAAAAAKAAQAAQAGAAAAAAALAAIAAQAGAAAAAAALAAMAAQAGAAAAAAALAAQAAQAGAAAAAAAMAAIAAQAGAAAAAAAMAAMAAQAGAAAAAAAMAAQAAQAGAAAAAAANAAIAAQAGAAAAAAANAAMAAQAGAAAAAAANAAQAAQAGAAAAAAAOAAIAAQAGAAAAAAAOAAMAAQAGAAAAAAAOAAQAAQAGAAAAAAAKAPf/AQAGAAAAAAALAPf/AQAGAAAAAAAMAPf/AQAGAAAAAAANAPf/AQAGAAAAAAAOAPf/AQAGAAAAAAD2//f/AQAGAAAAAAD1//f/AQAGAAAAAAD0//f/AQAGAAAAAADz//f/AQAGAAAAAADy//f/AQAGAAAAAADx//f/AQAGAAAAAADw////AQAGAAAAAADw//7/AQAGAAAAAADw//3/AQAGAAAAAADw//z/AQAGAAAAAADw//v/AQAGAAAAAADw//f/AQAGAAAAAADw//j/AQAGAAAAAADw//n/AQAGAAAAAADw//r/AQAGAAAAAADv//7/AQAGAAAAAADv////AQAGAAAAAADv//3/AQAGAAAAAADv//z/AQAGAAAAAADv//v/AQAGAAAAAADv//r/AQAGAAAAAADv//n/AQAGAAAAAADv//j/AQAGAAAAAADv//f/AQAGAAAAAAA=")
 tile_set = SubResource("TileSet_56dhn")
 
-[node name="num2" parent="." unique_id=1733220363 instance=ExtResource("19_sx8yt")]
+[node name="num2" parent="." unique_id=1611816000 instance=ExtResource("19_sx8yt")]
 z_index = 1
 position = Vector2(198, -83)
 
@@ -1332,3 +1368,6 @@ scale = Vector2(1.1386524, 1.1386524)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1199201304]
 position = Vector2(-43, 16)
+
+[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=20034142]
+environment = SubResource("Environment_w5nkq")

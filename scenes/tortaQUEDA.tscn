@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dyjpdq85xdrya"]
+
+[ext_resource type="Script" uid="uid://ctjcjloe407t5" path="res://scenes/torta_queda.gd" id="1_73kr2"]
+[ext_resource type="Texture2D" uid="uid://4ke82byupmrk" path="res://Treasure Hunters/Assets Kenney/tile_0105.png" id="2_ud5km"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2vea"]
+size = Vector2(18.5625, 14.5)
+
+[node name="tortaQUEDA" type="Area2D" unique_id=645642857]
+scale = Vector2(0.6443619, 0.6443619)
+collision_layer = 2
+script = ExtResource("1_73kr2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036922025]
+modulate = Color(0.680818, 1.0845727, 0.74981505, 1)
+rotation = 3.1415927
+texture = ExtResource("2_ud5km")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387106154]
+position = Vector2(-0.28125, -3)
+shape = SubResource("RectangleShape2D_i2vea")
+
+[node name="DropDetector" type="RayCast2D" parent="." unique_id=1451766593]
+target_position = Vector2(0, 210)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -26,13 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://ikoqj14scicw" path="res://icons/Music-33.png" id="23_1a85y"]
 [ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="23_vr8o3"]
 [ext_resource type="Texture2D" uid="uid://cmhxqw8eaaqdj" path="res://Treasure Hunters/popup.png" id="25_3wgol"]
-[ext_resource type="FontFile" uid="uid://c0nhxrqy7gsn3" path="res://font/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="26_1acrt"]
-
-[sub_resource type="Environment" id="Environment_qywvv"]
-background_mode = 3
-adjustment_enabled = true
-adjustment_contrast = 1.05
-adjustment_saturation = 1.25
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1acrt"]
 texture = ExtResource("2_wu84c")
@@ -167,6 +160,12 @@ outline_size = 4
 [sub_resource type="AtlasTexture" id="AtlasTexture_1acrt"]
 atlas = ExtResource("25_3wgol")
 
+[sub_resource type="Environment" id="Environment_qywvv"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.25
+
 [node name="MainMenu" type="Control" unique_id=218770627]
 layout_mode = 3
 anchors_preset = 15
@@ -179,9 +178,6 @@ offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_svtp6")
-
-[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=732684228]
-environment = SubResource("Environment_qywvv")
 
 [node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=2073240174]
 stream = ExtResource("1_8egab")
@@ -328,7 +324,6 @@ scale = Vector2(0.046979234, 0.046979234)
 texture = ExtResource("22_qywvv")
 
 [node name="AgePopup" type="ColorRect" parent="." unique_id=653899210]
-visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -348,22 +343,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -217.34598
-offset_top = -266.3077
-offset_right = 5394.236
-offset_bottom = 6327.6377
+offset_left = -296.1922
+offset_top = -346.1154
+offset_right = 5315.3896
+offset_bottom = 6247.83
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.081390776, 0.081390776)
+scale = Vector2(0.106, 0.106)
 texture = SubResource("AtlasTexture_1acrt")
 
-[node name="Label" type="Label" parent="AgePopup/TexturaPopUp" unique_id=1478419408]
+[node name="TOPO" type="Label" parent="AgePopup/TexturaPopUp" unique_id=1478419408]
 layout_mode = 0
-offset_left = 767.9002
-offset_top = 519.80927
-offset_right = 4705.9004
-offset_bottom = 1802.8093
-scale = Vector2(1, 1.3)
+offset_left = 1279.0283
+offset_top = 625.9092
+offset_right = 5217.0283
+offset_bottom = 1908.9092
+scale = Vector2(0.7660853, 0.84913737)
 theme_override_colors/font_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
 theme_override_fonts/font = ExtResource("23_vr8o3")
 theme_override_font_sizes/font_size = 500
@@ -371,31 +366,58 @@ text = "PREEncha os
 campos:"
 horizontal_alignment = 1
 
-[node name="AgeDropdown" type="OptionButton" parent="AgePopup/TexturaPopUp" unique_id=292075110]
+[node name="BAIXO" type="Label" parent="AgePopup/TexturaPopUp" unique_id=428797197]
 layout_mode = 0
-offset_left = 1760.2639
-offset_top = 3804.0586
-offset_right = 1896.2639
-offset_bottom = 3859.0586
-scale = Vector2(14.704101, 14.704101)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("26_1acrt")
-theme_override_font_sizes/font_size = 36
-alignment = 1
+offset_left = 1079.4633
+offset_top = 3156.7478
+offset_right = 5017.4634
+offset_bottom = 4439.748
+scale = Vector2(0.875, 0.879)
+theme_override_colors/font_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+theme_override_fonts/font = ExtResource("23_vr8o3")
+theme_override_font_sizes/font_size = 500
+text = "Colégio:"
+horizontal_alignment = 1
 
 [node name="NameEdit" type="LineEdit" parent="AgePopup/TexturaPopUp" unique_id=626115520]
 layout_mode = 0
-offset_left = 626.13385
-offset_top = 2539.977
-offset_right = 987.13385
-offset_bottom = 2594.977
-scale = Vector2(11.868774, 12.609312)
+offset_left = 888.97
+offset_top = 1868.6497
+offset_right = 1249.97
+offset_bottom = 1923.6497
+scale = Vector2(10.604, 10.1824665)
 theme_override_fonts/font = ExtResource("23_vr8o3")
 theme_override_font_sizes/font_size = 36
 placeholder_text = "Digite seu nome"
 alignment = 1
 max_length = 13
 expand_to_text_length = true
+
+[node name="Idade" type="LineEdit" parent="AgePopup/TexturaPopUp" unique_id=339644043]
+layout_mode = 0
+offset_left = 2068.2158
+offset_top = 2558.0547
+offset_right = 2204.2158
+offset_bottom = 2613.0547
+scale = Vector2(10.354, 10.247311)
+theme_override_fonts/font = ExtResource("23_vr8o3")
+theme_override_font_sizes/font_size = 36
+placeholder_text = "IDADE"
+alignment = 1
+max_length = 2
+
+[node name="SchoolDropdown" type="OptionButton" parent="AgePopup/TexturaPopUp" unique_id=693813919]
+layout_mode = 0
+offset_left = 1260.8857
+offset_top = 3855.2234
+offset_right = 1682.8857
+offset_bottom = 3919.2234
+scale = Vector2(7.24, 7.24)
+theme_override_fonts/font = ExtResource("23_vr8o3")
+theme_override_font_sizes/font_size = 36
+alignment = 1
+autowrap_mode = 2
+fit_to_longest_item = false
 
 [node name="TextureButton" type="TextureButton" parent="AgePopup/TexturaPopUp" unique_id=1960344166]
 z_index = 1
@@ -405,22 +427,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1281.8041
-offset_top = 1664.8428
-offset_right = -1239.8041
-offset_bottom = 1678.8428
+offset_left = -1399.7666
+offset_top = 1891.7041
+offset_right = -1357.7666
+offset_bottom = 1905.7041
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(60.506737, 58.555565)
+scale = Vector2(66.22487, 47.298954)
 size_flags_horizontal = 4
 texture_normal = ExtResource("16_5pajh")
 
 [node name="Label" type="Label" parent="AgePopup/TexturaPopUp/TextureButton" unique_id=1226014177]
 layout_mode = 0
-offset_left = 2.1842465
-offset_right = 613.18427
-offset_bottom = 87.0
-scale = Vector2(0.08511416, 0.12265269)
+offset_left = 6.848694
+offset_top = 0.19177246
+offset_right = 617.8487
+offset_bottom = 87.19177
+scale = Vector2(0.06319807, 0.12265269)
 theme_override_fonts/font = ExtResource("23_vr8o3")
 theme_override_font_sizes/font_size = 66
 text = "CONFIRMAR"
@@ -475,6 +498,11 @@ visible = false
 show_behind_parent = true
 position = Vector2(1364, 231)
 scale = Vector2(4.52, 4.52)
+
+[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=732684228]
+environment = SubResource("Environment_qywvv")
+
+[node name="SchoolRequest" type="HTTPRequest" parent="." unique_id=1230152410]
 
 [connection signal="mouse_entered" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Botoes/TextureButton" to="." method="_on_texture_button_mouse_exited"]

@@ -4,25 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://22ts267b6bpq" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png" id="2_5xbjy"]
 [ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="2_6dial"]
 [ext_resource type="Texture2D" uid="uid://bq6ypnt4mt65k" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Yellow Button/1.png" id="2_7nomh"]
+[ext_resource type="PackedScene" uid="uid://dwmf0q5p7fn3y" path="res://scenes/label_relogio.tscn" id="2_isj1j"]
 [ext_resource type="Texture2D" uid="uid://bc6xlmg53om3v" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_rus8k"]
 [ext_resource type="Texture2D" uid="uid://bexo3nf3vg2it" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png" id="3_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://fgvu33i50iqc" path="res://scenes/nuvem.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://tam1lpl5mxap" path="res://scenes/coqueiro_fundo_direita.tscn" id="4_15mv3"]
 [ext_resource type="PackedScene" uid="uid://b5551gddgt2ij" path="res://scenes/efeito_agua_grande.tscn" id="4_pa8r4"]
 [ext_resource type="Texture2D" uid="uid://xdgqelgqoxs3" path="res://icons/Clock.png" id="4_x2xxo"]
+[ext_resource type="Texture2D" uid="uid://ubpoj0ifpamo" path="res://icons/Pause.png" id="5_2cbcq"]
 [ext_resource type="PackedScene" uid="uid://c43vbtwwpmu4m" path="res://scenes/coqueiro_frente.tscn" id="5_4nkto"]
+[ext_resource type="Texture2D" uid="uid://bap60kx0wy3jb" path="res://icons/List.png" id="6_isj1j"]
+[ext_resource type="Texture2D" uid="uid://dvy5lymydm067" path="res://icons/Play.png" id="7_so66j"]
 [ext_resource type="Texture2D" uid="uid://b23otaffo0ahg" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="8_1s4pk"]
 [ext_resource type="PackedScene" uid="uid://dji6evok8f8gw" path="res://scenes/num_3.tscn" id="9_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://bb6ovjcqplhv6" path="res://scenes/num_1.tscn" id="9_e3sih"]
+[ext_resource type="PackedScene" uid="uid://badg5ne1sa02m" path="res://scenes/painel_pause.tscn" id="9_tr1x6"]
+[ext_resource type="PackedScene" uid="uid://opciariygskf" path="res://scenes/char_select.tscn" id="10_d5akn"]
 [ext_resource type="PackedScene" uid="uid://c3y8j0w4hjioq" path="res://scenes/barril.tscn" id="11_2os1m"]
 [ext_resource type="PackedScene" uid="uid://cpsf0rvwpdcey" path="res://scenes/porta.tscn" id="12_go7sj"]
 [ext_resource type="PackedScene" uid="uid://cyat7mx8h5lbv" path="res://scenes/chave.tscn" id="13_7gny6"]
-
-[sub_resource type="Environment" id="Environment_x2xxo"]
-background_mode = 3
-adjustment_enabled = true
-adjustment_contrast = 1.05
-adjustment_saturation = 1.25
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nkto"]
 texture = ExtResource("2_5xbjy")
@@ -602,13 +602,20 @@ texture = ExtResource("2_rus8k")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_5xbjy")
 
+[sub_resource type="Environment" id="Environment_x2xxo"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.25
+
 [node name="Level1" type="Node2D" unique_id=1820141578]
 script = ExtResource("1_6dial")
 
-[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=970181053]
-environment = SubResource("Environment_x2xxo")
-
 [node name="HUD" type="CanvasLayer" parent="." unique_id=456158037]
+
+[node name="label_relogio" parent="HUD" unique_id=1733220363 instance=ExtResource("2_isj1j")]
+position = Vector2(1117, 65)
+scale = Vector2(3.0399902, 3.2923756)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=2093066865]
 offset_left = 12.0
@@ -722,22 +729,79 @@ text = "4 "
 horizontal_alignment = 1
 
 [node name="relogio" type="TextureRect" parent="HUD" unique_id=1656873130]
-offset_left = 1035.0
-offset_top = 5.0
-offset_right = 1155.0
-offset_bottom = 125.0
-scale = Vector2(0.32, 0.32)
+offset_left = 1042.0001
+offset_top = 77.00001
+offset_right = 1162.0001
+offset_bottom = 197.0
+scale = Vector2(0.24157733, 0.24157733)
 texture = ExtResource("4_x2xxo")
 
 [node name="TimeLabel" type="Label" parent="HUD" unique_id=1186663789]
-offset_left = 1084.0
-offset_top = -4.0
-offset_right = 1124.0
-offset_bottom = 46.0
+offset_left = 1083.0
+offset_top = 68.0
+offset_right = 1123.0
+offset_bottom = 118.0
+scale = Vector2(0.8799902, 0.8799902)
 theme_override_fonts/font = ExtResource("2_6dial")
 theme_override_font_sizes/font_size = 38
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Menus" type="HBoxContainer" parent="HUD" unique_id=1853280227]
+process_mode = 3
+offset_left = 1033.0
+offset_top = 12.0
+offset_right = 1125.0
+offset_bottom = 52.0
+scale = Vector2(3.3295574, 3.3295574)
+
+[node name="pause" type="TextureButton" parent="HUD/Menus" unique_id=1726494728]
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+layout_mode = 2
+texture_normal = ExtResource("2_7nomh")
+
+[node name="pause_icon" type="TextureRect" parent="HUD/Menus/pause" unique_id=1890687138]
+layout_mode = 0
+offset_left = 4.3691406
+offset_top = 3.1470032
+offset_right = 144.36914
+offset_bottom = 143.147
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("5_2cbcq")
+
+[node name="play_icon" type="TextureRect" parent="HUD/Menus/pause" unique_id=1377589312]
+visible = false
+layout_mode = 0
+offset_left = 4.805664
+offset_top = 2.703064
+offset_right = 144.80566
+offset_bottom = 142.70306
+scale = Vector2(0.035478584, 0.04749219)
+texture = ExtResource("7_so66j")
+
+[node name="botaomenu" type="TextureButton" parent="HUD/Menus" unique_id=183032121]
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+layout_mode = 2
+texture_normal = ExtResource("2_7nomh")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Menus/botaomenu" unique_id=1507806788]
+layout_mode = 0
+offset_left = 3.9003096
+offset_top = 3.1474025
+offset_right = 143.90031
+offset_bottom = 143.1474
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("6_isj1j")
+
+[node name="Painel_pause" parent="HUD" unique_id=1578342202 instance=ExtResource("9_tr1x6")]
+visible = false
+
+[node name="CharSelect" parent="HUD" unique_id=1033045445 instance=ExtResource("10_d5akn")]
+visible = false
+offset_left = -389.0
+offset_top = -17.0
+offset_right = -389.0
+offset_bottom = -17.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1493917879]
 wait_time = 90.0
@@ -794,7 +858,7 @@ position = Vector2(-54, -27)
 [node name="CoqueiroFrente2" parent="Tiles" unique_id=545297707 instance=ExtResource("5_4nkto")]
 position = Vector2(101, -44)
 
-[node name="num2" parent="Tiles" unique_id=1733220363 instance=ExtResource("9_2y5yt")]
+[node name="num2" parent="Tiles" unique_id=1236266457 instance=ExtResource("9_2y5yt")]
 position = Vector2(-53, -64)
 
 [node name="num1" parent="Tiles" unique_id=378091648 instance=ExtResource("9_e3sih")]
@@ -806,3 +870,9 @@ scale = Vector2(1.4, 1.4)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=2119395901]
 position = Vector2(-29, -18)
+
+[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=970181053]
+environment = SubResource("Environment_x2xxo")
+
+[connection signal="pressed" from="HUD/Menus/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="HUD/Menus/botaomenu" to="." method="_on_botaomenu_pressed"]

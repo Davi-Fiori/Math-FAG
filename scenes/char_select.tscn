@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://opciariygskf"]
+
+[ext_resource type="Texture2D" uid="uid://d3sxnl1mdlkh5" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Prefabs/9.png" id="1_a2t0j"]
+[ext_resource type="Script" uid="uid://cded66rdf5wbd" path="res://scenes/char_select.gd" id="1_lcdbo"]
+[ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="2_lcdbo"]
+[ext_resource type="PackedScene" uid="uid://c56c38swehumc" path="res://scenes/caranguejo_menu.tscn" id="3_dgebt"]
+[ext_resource type="PackedScene" uid="uid://ox8nbyybn52" path="res://scenes/joe_menu.tscn" id="4_5kqyn"]
+[ext_resource type="Texture2D" uid="uid://bnoulkny1mkyp" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Green Button/New Project.png" id="5_gx4en"]
+[ext_resource type="Texture2D" uid="uid://bnj5fum670s32" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Icons/1.png" id="6_0k605"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nxft4"]
+font_size = 67
+outline_size = 24
+outline_color = Color(0, 0.19606715, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bjbmf"]
+font_size = 67
+font_color = Color(18.892157, 18.892157, 18.892157, 1)
+outline_color = Color(0, 0.19606715, 0, 1)
+
+[node name="CharSelect" type="Control" unique_id=1033045445]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lcdbo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=473270670]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -87.0
+offset_right = -77.0
+offset_bottom = -160.27002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.053001, 1.4840001)
+color = Color(0, 0, 0, 0.397)
+
+[node name="charSelect" type="TextureRect" parent="." unique_id=479816757]
+z_index = 1
+layout_mode = 0
+offset_left = 739.0
+offset_top = 64.0
+offset_right = 867.0
+offset_bottom = 192.0
+scale = Vector2(3.359999, 4.5199995)
+texture = ExtResource("1_a2t0j")
+
+[node name="escolha" type="Label" parent="charSelect" unique_id=1353014493]
+layout_mode = 0
+offset_left = 11.6073
+offset_top = 19.026505
+offset_right = 715.6073
+offset_bottom = 196.0265
+scale = Vector2(0.14717932, 0.12526941)
+theme_override_fonts/font = ExtResource("2_lcdbo")
+theme_override_font_sizes/font_size = 66
+text = "ESCOLHA SEU
+PERSONAGEM"
+label_settings = SubResource("LabelSettings_nxft4")
+horizontal_alignment = 1
+text_direction = 1
+
+[node name="caranguejo menu" parent="charSelect" unique_id=630639272 instance=ExtResource("3_dgebt")]
+visible = false
+position = Vector2(62.202377, 62.831894)
+scale = Vector2(1.2142891, 0.9734524)
+
+[node name="joe menu" parent="charSelect" unique_id=1188558794 instance=ExtResource("4_5kqyn")]
+position = Vector2(66.66668, 63.93806)
+scale = Vector2(1.603531, 1.1873155)
+
+[node name="TextureRect" type="TextureButton" parent="charSelect" unique_id=321094586]
+modulate = Color(1, 0.8729805, 1, 0.874)
+layout_mode = 0
+offset_left = 28.869055
+offset_top = 88.49558
+offset_right = 70.86906
+offset_bottom = 128.49557
+scale = Vector2(1.6778657, 1.14574)
+texture_normal = ExtResource("5_gx4en")
+
+[node name="escolha2" type="Label" parent="charSelect/TextureRect" unique_id=977939239]
+layout_mode = 0
+offset_left = 3.3702135
+offset_top = 0.77238584
+offset_right = 452.76022
+offset_bottom = 98.36238
+scale = Vector2(0.08, 0.109)
+theme_override_fonts/font = ExtResource("2_lcdbo")
+theme_override_font_sizes/font_size = 66
+text = "CONFIRMAR"
+label_settings = SubResource("LabelSettings_bjbmf")
+horizontal_alignment = 1
+text_direction = 1
+
+[node name="esquerda" type="TextureButton" parent="charSelect" unique_id=274479179]
+modulate = Color(1.1291975, 1.1291975, 1.1291975, 1)
+layout_mode = 0
+offset_left = 21.499
+offset_top = 61.72564
+offset_right = 50.98405
+offset_bottom = 84.72562
+scale = Vector2(1.8095212, 1.321737)
+texture_normal = ExtResource("6_0k605")
+
+[node name="direita" type="TextureButton" parent="charSelect" unique_id=1925442699]
+modulate = Color(1.1291975, 1.1291975, 1.1291975, 1)
+layout_mode = 0
+offset_left = 106.704
+offset_top = 69.69
+offset_right = 136.18881
+offset_bottom = 92.689995
+rotation = 3.1415927
+scale = Vector2(1.8095212, 1.321737)
+texture_normal = ExtResource("6_0k605")
+
+[connection signal="pressed" from="charSelect/esquerda" to="." method="_on_esquerda_pressed"]
+[connection signal="pressed" from="charSelect/direita" to="." method="_on_direita_pressed"]

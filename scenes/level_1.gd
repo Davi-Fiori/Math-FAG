@@ -1,21 +1,25 @@
 extends Node2D
 
+@export var correct_answer: int = 1 # Change this in the Inspector for each level!
+
 @onready var key = $chave
 @onready var door = $porta
 @onready var timer = $Timer
 @onready var question_mark_label = $HUD/HBoxContainer/TextureRect3/interrogacao
 @onready var time_label = $HUD/TimeLabel
+@onready var painel_pause = $HUD/Painel_pause
+@onready var btn_pause = $HUD/Menus/pause
+@onready var pause_icon = $HUD/Menus/pause/pause_icon
+@onready var play_icon = $HUD/Menus/pause/play_icon
+@onready var btn_menu = $HUD/Menus/botaomenu
+@onready var char_select = $HUD/CharSelect
 
-var correct_answer = 1
 var can_enter_door = false 
 
 func _ready():
 	# --- DYNAMIC CHARACTER SPAWNING ---
-	# Load the character scene the player chose in the menu
 	var player_scene = load(Global.selected_char_scene)
 	var player_instance = player_scene.instantiate()
-	
-	# Place them at the Marker2D and add them to the game
 	player_instance.global_position = $SpawnPoint.global_position
 	add_child(player_instance)
 	# ----------------------------------
@@ -27,16 +31,25 @@ func _ready():
 	
 	timer.timeout.connect(_on_timer_timeout)
 	door.body_entered.connect(_on_door_body_entered)
+	
+	pause_icon.show()
+	play_icon.hide()
+	
+	# Safe connections (prevents errors if copied with editor signals)
+	if not btn_pause.pressed.is_connected(_on_pause_pressed):
+		btn_pause.pressed.connect(_on_pause_pressed)
+	if not btn_menu.pressed.is_connected(_on_menu_pressed):
+		btn_menu.pressed.connect(_on_menu_pressed)
+	if not painel_pause.menu_fechado.is_connected(_on_painel_fechado):
+		painel_pause.menu_fechado.connect(_on_painel_fechado)
+	if not painel_pause.abrir_personagens.is_connected(char_select.abrir):
+		painel_pause.abrir_personagens.connect(char_select.abrir)
 
 func _on_timer_timeout():
-	# Pass "tempo" so Firebase logs it as levelX_tempo
 	record_error("tempo") 
-	
-	# Encontra o jogador atual (seja Caranguejo ou Joe) e aplica o dano
 	var current_player = get_tree().get_first_node_in_group("player")
 	if current_player:
 		current_player.die()
-		
 	await get_tree().create_timer(2.0).timeout
 	restart_level()
 
@@ -47,8 +60,6 @@ func check_answer(picked_value):
 		spawn_key()
 	else:
 		record_error("erros") 
-		
-		# Encontra o jogador atual (seja Caranguejo ou Joe) e aplica o dano
 		var current_player = get_tree().get_first_node_in_group("player")
 		if current_player:
 			current_player.die()
@@ -62,20 +73,14 @@ func show_door():
 	door.process_mode = Node.PROCESS_MODE_INHERIT
 	door.get_node("AnimatedSprite2D").play("abrindo")
 	
-	# Wait 1 second while the animation plays
 	await get_tree().create_timer(1.0).timeout
-	
-	# The 1 second is up! Unlock the door.
 	can_enter_door = true
 	
-	# Check if the player is ALREADY standing inside the door!
 	for body in door.get_overlapping_bodies():
 		if body.is_in_group("player"):
 			door.advance_level(timer.time_left)
 
-# --- DOOR TOUCH LOGIC ---
 func _on_door_body_entered(body):
-	# Check if it is the player AND the door is fully unlocked
 	if body.is_in_group("player") and can_enter_door == true:
 		door.advance_level(timer.time_left)
 
@@ -86,9 +91,30 @@ func _process(_delta):
 	time_label.text = str(int(timer.time_left))
 	
 func record_error(error_type: String):
-	# Automatically figure out if this is level_1, level_2, etc.
 	var current_path = get_tree().current_scene.scene_file_path
 	var level_number = current_path.get_file().get_basename().trim_prefix("level_").to_int()
-	
-	# Send both the level number AND the type of error to Global!
 	Global.log_error(level_number, error_type)
+	
+# --- PAUSE & MENU ---
+func _on_pause_pressed():
+	if get_tree().paused:
+		get_tree().paused = false
+		timer.paused = false
+		pause_icon.show()
+		play_icon.hide()
+	else:
+		get_tree().paused = true
+		timer.paused = true
+		pause_icon.hide()
+		play_icon.show()
+
+func _on_menu_pressed():
+	pause_icon.hide()
+	play_icon.show()
+	timer.paused = true
+	painel_pause.abrir()
+
+func _on_painel_fechado():
+	timer.paused = false
+	pause_icon.show()
+	play_icon.hide()

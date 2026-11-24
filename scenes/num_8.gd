@@ -1,18 +1,14 @@
 extends Area2D
 
-@export var value: int = 8 
+@export var value: int = 8
 
 func _ready():
-	# Adiciona automaticamente este número a um grupo chamado "numbers"
+	# This automatically adds every number to a group called "numbers"
 	add_to_group("numbers")
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		# Avisa a fase principal qual foi o valor coletado
 		get_tree().current_scene.check_answer(value)
 		
-		# Destrói o número da tela imediatamente para não causar colisão dupla!
+		# --- FIXED: Delete this specific number immediately! ---
 		queue_free()
-
-func _on_area_entered(area: Area2D) -> void:
-	pass # Pode deixar isso aqui caso precise usar no futuro

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var value: int = 3 
+@export var value: int = 3
 
 func _ready():
 	# This automatically adds every number to a group called "numbers"
@@ -9,5 +9,6 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		get_tree().current_scene.check_answer(value)
-		# Note: You can actually remove queue_free() from here now, 
-		# because the group command in Step 2 will delete this one too!
+		
+		# --- FIXED: Delete this specific number immediately! ---
+		queue_free()

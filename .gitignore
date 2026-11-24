@@ -2,3 +2,6 @@
 .godot/
 /android/
 mathfag.xcframework/
+mathfag.xcodeproj/
+MoltenVK.xcframework/
+JOGOWEB/

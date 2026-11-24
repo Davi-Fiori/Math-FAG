@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dwmf0q5p7fn3y"]
+
+[ext_resource type="Texture2D" uid="uid://cgge468mp7nmd" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Orange Paper/12.png" id="1_mbw8o"]
+[ext_resource type="Texture2D" uid="uid://douxmlps027rx" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Orange Paper/11.png" id="2_gaekw"]
+[ext_resource type="Texture2D" uid="uid://qxk2xwln8rxr" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Orange Paper/10.png" id="3_3b3ly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp7n2"]
+atlas = ExtResource("1_mbw8o")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c33ck"]
+atlas = ExtResource("2_gaekw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcsbt"]
+atlas = ExtResource("3_3b3ly")
+
+[node name="label_relogio" type="Area2D" unique_id=1733220363]
+modulate = Color(0.6542321, 0.6542321, 0.654232, 1)
+scale = Vector2(1, 1.0830218)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117607953]
+position = Vector2(7, 8.310082)
+texture = SubResource("AtlasTexture_gp7n2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1778382041]
+visible = false
+position = Vector2(-25, 8)
+texture = SubResource("AtlasTexture_c33ck")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1717827381]
+position = Vector2(-25, 8.310083)
+texture = SubResource("AtlasTexture_dcsbt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

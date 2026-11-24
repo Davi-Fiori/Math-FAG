@@ -14,44 +14,47 @@ extends Control
 # Grab your background music node
 @onready var musica_menu = $MusicaMenu
 
-# --- AGE POP-UP VARIABLES ---
+# --- AGE & SCHOOL POP-UP VARIABLES ---
 @onready var age_popup = $AgePopup
 @onready var name_input = $AgePopup/TexturaPopUp/NameEdit
-@onready var age_dropdown = $AgePopup/TexturaPopUp/AgeDropdown
+@onready var age_input = $AgePopup/TexturaPopUp/Idade # Agora é LineEdit!
+@onready var school_dropdown = $AgePopup/TexturaPopUp/SchoolDropdown
 @onready var confirm_button = $AgePopup/TexturaPopUp/TextureButton
+@onready var school_request = $SchoolRequest # Nó HTTPRequest na raiz do MainMenu
+
+const FIREBASE_SCHOOLS_URL = "https://math-fag-default-rtdb.firebaseio.com/schools.json"
 
 func _ready():
-	# Ensure the "On" icon is showing when the game starts
 	icon_on.show()
 	icon_off.hide()
 	
-	# --- CHECK IF AGE WAS ALREADY ENTERED BEFORE ---
+	# 1. Iniciar busca das escolas no Firebase
+	if school_request:
+		school_request.request_completed.connect(_on_schools_request_completed)
+		fetch_schools_from_firebase()
+	
+	# --- CHECK IF USER REGISTERED BEFORE ---
 	Global.load_game()
-	if Global.player_age > 0:
-		# Browser already has an ID and Age! Skip pop-up entirely.
+	if Global.player_age > 0 and Global.player_school != "":
+		# Já cadastrado! Pula o pop-up.
 		age_popup.hide() 
 		btn_jogar.grab_focus()
 	else:
-		# First time visitor on this browser instance! Show the pop-up.
+		# Primeiro acesso: exibe o pop-up de cadastro.
 		age_popup.show()
 		confirm_button.pressed.connect(_on_confirm_button_pressed)
 		
-		# 1. Add a placeholder text at the very top (Index 0)
-		age_dropdown.add_item("Idade")
-		age_dropdown.set_item_disabled(0, true) # Prevents selecting the word "Idade"
+		# Limpa e configura o LineEdit de Idade (opcionalmente coloca um placeholder)
+		age_input.text = ""
 		
-		# 2. Automatically generate numbers 1 through 99
-		for i in range(1, 100):
-			age_dropdown.add_item(str(i))
+		# Dropdown de Escola (placeholder inicial)
+		school_dropdown.add_item("Selecione a Escola")
+		school_dropdown.set_item_disabled(0, true)
+		school_dropdown.select(0)
+		school_dropdown.text = "Selecione a Escola"
 			
-		# 3. FORCE IT TO DISPLAY "Idade" BY DEFAULT!
-		age_dropdown.select(0) # <-- ADDED: This fixes the blank dropdown bug!
-		age_dropdown.text = "Idade"
-			
-		# Give the controller focus to the Name box first
 		name_input.grab_focus()
 		
-	
 	# --- CONTROLLER SUPPORT (Visuals) ---
 	btn_jogar.focus_entered.connect(_on_texture_button_mouse_entered)
 	btn_jogar.focus_exited.connect(_on_texture_button_mouse_exited)
@@ -62,62 +65,80 @@ func _ready():
 	btn_sair.focus_entered.connect(_on_sair_mouse_entered)
 	btn_sair.focus_exited.connect(_on_sair_mouse_exited)
 
-# --- AGE POP-UP LOGIC ---
+# --- FIREBASE SCHOOL FETCH LOGIC ---
+func fetch_schools_from_firebase() -> void:
+	var error = school_request.request(FIREBASE_SCHOOLS_URL)
+	if error != OK:
+		print("Erro ao solicitar lista de escolas do Firebase.")
+
+func _on_schools_request_completed(_result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
+	if response_code == 200:
+		var json = JSON.new()
+		var parse_result = json.parse(body.get_string_from_utf8())
+		
+		if parse_result == OK:
+			var schools_data = json.get_data()
+			if typeof(schools_data) == TYPE_DICTIONARY:
+				school_dropdown.clear()
+				school_dropdown.add_item("Selecione a Escola")
+				school_dropdown.set_item_disabled(0, true)
+				
+				# Preenche com as escolas vindas do Firebase (ex: Antônio Rockenbach, Paulo Freire)
+				for school_id in schools_data.keys():
+					var school_info = schools_data[school_id]
+					if school_info is Dictionary and school_info.has("name"):
+						school_dropdown.add_item(school_info["name"])
+				
+				school_dropdown.select(0)
+		else:
+			print("Falha ao analisar o JSON de escolas.")
+	else:
+		print("Erro HTTP ao buscar escolas. Código: ", response_code)
+
+# --- POP-UP LOGIC ---
 
 func _on_confirm_button_pressed():
-	# Grab the typed name and strip away any accidental spaces at the beginning/end
 	var entered_name = name_input.text.strip_edges()
+	var entered_age_text = age_input.text.strip_edges()
 	
-	# Check if they typed a name AND actually selected an age
-	if entered_name != "" and age_dropdown.selected > 0:
+	# Valida se preencheu o nome, se a idade é um número válido e se selecionou a escola
+	if entered_name != "" and entered_age_text.is_valid_int() and school_dropdown.selected > 0:
+		var selected_school_text = school_dropdown.get_item_text(school_dropdown.selected)
 		
-		var selected_age_text = age_dropdown.get_item_text(age_dropdown.selected)
-		
-		# 1. Save the info to our Global variables
+		# 1. Salva as informações globalmente
 		Global.player_name = entered_name
-		Global.player_age = int(selected_age_text)
+		Global.player_age = int(entered_age_text)
+		Global.player_school = selected_school_text
 		
-		# 2. Save locally and send the package to Firebase!
+		# 2. Salva localmente e sincroniza com o Firebase
 		Global.save_game() 
 		Global.sync_to_cloud() 
 		
-		# 3. Hide the pop-up and focus the JOGAR button
+		# 3. Fecha o pop-up e foca no botão de jogar
 		age_popup.hide()
 		btn_jogar.grab_focus()
 	else:
-		# Optional: You could change the name_input placeholder text here to warn them!
-		print("Preencha o nome e selecione uma idade!")
+		print("Preencha o nome, digite uma idade válida e escolha uma escola!")
 
 # --- PLAY BUTTON ---
 
 func _on_texture_button_pressed():
-	# 1. FORCE FULLSCREEN!
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-
-	# 2. Disable the button
 	btn_jogar.disabled = true
-	
-	# 3. Play the click sound
 	som_botao.play()
-	
-	# 4. Stop the Menu Music so they don't overlap!
 	musica_menu.stop()
-	
-	# 5. Wait for the click sound to finish
 	await som_botao.finished
-	
-	# 6. Start the seamless endless playlist!
 	Global.start_playlist()
-	
-	# 7. Load the LEVEL SELECT screen!
-	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
+	SceneManager.change_scene("res://scenes/level_select.tscn", {
+	"pattern": "squares",
+	"speed": 2.5,
+	"wait_time": 0.15
+})
 
 func _on_texture_button_mouse_entered():
-	# Darken the ENTIRE button (Texture + Label) when hovered
 	btn_jogar.modulate = Color(0.758, 0.758, 0.758, 1.0)
 
 func _on_texture_button_mouse_exited():
-	# Return button to normal color when mouse leaves
 	btn_jogar.modulate = Color(1.0, 1.0, 1.0)
 
 # --- MUSIC BUTTON ---

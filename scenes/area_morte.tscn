@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dngcdgnql283b"]
+
+[ext_resource type="Script" uid="uid://x37oothgm4as" path="res://scenes/area_morte.gd" id="1_i1rqs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nrq3u"]
+
+[node name="AreaMorte" type="Area2D" unique_id=1247121345]
+position = Vector2(-4, 0)
+script = ExtResource("1_i1rqs")
+
+[node name="DeathZone" type="CollisionShape2D" parent="." unique_id=1150778262]
+shape = SubResource("WorldBoundaryShape2D_nrq3u")

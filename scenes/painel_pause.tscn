@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://badg5ne1sa02m"]
+
+[ext_resource type="Script" uid="uid://bnejmbqt6uaj5" path="res://scenes/painel_pause.gd" id="1_rt40n"]
+[ext_resource type="Texture2D" uid="uid://ylq5mkjqvtgg" path="res://assets/painelpause.png" id="2_5yj6t"]
+[ext_resource type="Texture2D" uid="uid://bmu5xgu7lh0lu" path="res://icons/Redo.png" id="6_fvpcs"]
+[ext_resource type="Texture2D" uid="uid://bm8q1ob3b4ldr" path="res://icons/Home.png" id="7_3ip22"]
+[ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="11_0354c"]
+[ext_resource type="Texture2D" uid="uid://dcptv4eys5kmi" path="res://assets/botao.png" id="11_igghw"]
+
+[node name="Painel_pause" type="Control" unique_id=1578342202]
+process_mode = 3
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.000008
+offset_top = 9.0
+offset_right = 32.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.013, 0.013)
+script = ExtResource("1_rt40n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=499795704]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6230.77
+offset_top = -2846.154
+offset_right = -6230.77
+offset_bottom = -2846.154
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(84.07752, 85.284096)
+color = Color(0, 0, 0, 0.397)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1798093906]
+self_modulate = Color(1, 1, 1, 0.90300006)
+layout_mode = 0
+offset_left = 19615.385
+offset_top = 5153.8457
+offset_right = 20233.385
+offset_bottom = 5737.8457
+scale = Vector2(67.94223, 67.94223)
+texture = ExtResource("2_5yj6t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=1208086742]
+layout_mode = 0
+offset_left = 95.73569
+offset_top = 74.76639
+offset_right = 1203.7357
+offset_bottom = 802.76636
+scale = Vector2(0.38307562, 0.38307562)
+
+[node name="BtnContinuar" type="TextureButton" parent="TextureRect/VBoxContainer" unique_id=691721558]
+layout_mode = 2
+texture_normal = ExtResource("11_igghw")
+
+[node name="Continuar" type="Label" parent="TextureRect/VBoxContainer/BtnContinuar" unique_id=967848434]
+layout_mode = 0
+offset_left = 122.23717
+offset_top = 42.1508
+offset_right = 512.2372
+offset_bottom = 119.1508
+scale = Vector2(2.184968, 2.7565968)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_0354c")
+theme_override_font_sizes/font_size = 60
+text = "CONTINUAR"
+
+[node name="BtnPersonagem" type="TextureButton" parent="TextureRect/VBoxContainer" unique_id=1837989882]
+layout_mode = 2
+texture_normal = ExtResource("11_igghw")
+
+[node name="Personagem" type="Label" parent="TextureRect/VBoxContainer/BtnPersonagem" unique_id=860349805]
+z_index = 1
+layout_mode = 0
+offset_left = 80.086334
+offset_top = 42.86259
+offset_right = 435.08633
+offset_bottom = 101.86259
+scale = Vector2(2.714, 3.609)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.637)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_0354c")
+theme_override_font_sizes/font_size = 43
+text = "PERSONAGENS"
+
+[node name="BtnMenuPrincipal" type="TextureButton" parent="TextureRect" unique_id=1365080260]
+layout_mode = 0
+offset_left = 82.31793
+offset_top = 450.58234
+offset_right = 1190.3179
+offset_bottom = 590.5824
+scale = Vector2(0.4463153, 0.4463153)
+texture_normal = ExtResource("7_3ip22")
+
+[node name="BtnReiniciar" type="TextureButton" parent="TextureRect" unique_id=1314621100]
+layout_mode = 0
+offset_left = 483.07623
+offset_top = 450.58234
+offset_right = 1591.0762
+offset_bottom = 590.58234
+scale = Vector2(0.44621623, 0.44621623)
+texture_normal = ExtResource("6_fvpcs")
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/BtnContinuar" to="." method="_on_btn_continuar_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/BtnPersonagem" to="." method="_on_btn_personagem_pressed"]
+[connection signal="pressed" from="TextureRect/BtnMenuPrincipal" to="." method="_on_btn_menu_principal_pressed"]
+[connection signal="pressed" from="TextureRect/BtnReiniciar" to="." method="_on_btn_reiniciar_pressed"]

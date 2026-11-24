@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://csorpb3k2de8j"]
+
+[ext_resource type="Texture2D" uid="uid://spfo4odcmwbq" path="res://assets/ocean background/Back.png" id="1_xps5e"]
+[ext_resource type="Shader" uid="uid://828kxm4cn6n2" path="res://scenes/fundo_praia.gdshader" id="2_olbdr"]
+[ext_resource type="Texture2D" uid="uid://btr43ak0vbjp6" path="res://assets/ocean background/Clouds.png" id="3_rryas"]
+[ext_resource type="Texture2D" uid="uid://dqp28vkvvg355" path="res://assets/ocean background/Middle.png" id="4_ol2m1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50exi"]
+shader = ExtResource("2_olbdr")
+shader_parameter/scroll_speed = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3b7ud"]
+shader = ExtResource("2_olbdr")
+shader_parameter/scroll_speed = 0.05
+
+[node name="FundoOcean" type="Node2D" unique_id=2125946957]
+
+[node name="Ceu" type="TextureRect" parent="." unique_id=350050877]
+texture_repeat = 2
+offset_right = 579.75
+offset_bottom = 240.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_xps5e")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Nuvem1" type="TextureRect" parent="." unique_id=1288820406]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_50exi")
+offset_left = -9.0
+offset_top = 40.0
+offset_right = 574.89
+offset_bottom = 280.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_rryas")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Nuvem2" type="TextureRect" parent="." unique_id=1866127820]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3b7ud")
+offset_left = -2.0
+offset_top = 173.0
+offset_right = 578.565
+offset_bottom = 497.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_ol2m1")
+expand_mode = 1
+stretch_mode = 1

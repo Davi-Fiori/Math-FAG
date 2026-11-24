@@ -23,12 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://c56c38swehumc" path="res://scenes/caranguejo_menu.tscn" id="19_thf6c"]
 [ext_resource type="PackedScene" uid="uid://dyxgvdf1steho" path="res://scenes/fundo_ceu.tscn" id="22_r4hmm"]
 
-[sub_resource type="Environment" id="Environment_r77uv"]
-background_mode = 3
-adjustment_enabled = true
-adjustment_contrast = 1.05
-adjustment_saturation = 1.25
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rif6e"]
 atlas = ExtResource("3_2epne")
 
@@ -171,6 +165,12 @@ font_size = 67
 font_color = Color(18.892157, 18.892157, 18.892157, 1)
 outline_color = Color(0, 0.19606715, 0, 1)
 
+[sub_resource type="Environment" id="Environment_r77uv"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.25
+
 [node name="LevelSelect" type="Control" unique_id=1321118006]
 layout_mode = 3
 anchors_preset = 15
@@ -179,9 +179,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r77uv")
-
-[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=5509773]
-environment = SubResource("Environment_r77uv")
 
 [node name="SomBotao" type="AudioStreamPlayer" parent="." unique_id=74613935]
 stream = ExtResource("2_rif6e")
@@ -324,6 +321,176 @@ scale = Vector2(0.19082355, 0.19082355)
 theme_override_fonts/font = ExtResource("5_r77uv")
 theme_override_font_sizes/font_size = 50
 text = "7"
+
+[node name="8" type="TextureButton" parent="TextureRect/GridContainer" unique_id=1165263189]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/8" unique_id=400158937]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 4.171013
+offset_top = -1.4598529
+offset_right = 44.171013
+offset_bottom = 67.540146
+scale = Vector2(0.19082355, 0.19082355)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "8"
+
+[node name="9" type="TextureButton" parent="TextureRect/GridContainer" unique_id=1980404561]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/9" unique_id=512870864]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 3.4228516
+offset_top = -1.4598541
+offset_right = 43.42285
+offset_bottom = 67.540146
+scale = Vector2(0.19082355, 0.19082355)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "9"
+
+[node name="10" type="TextureButton" parent="TextureRect/GridContainer" unique_id=1565182762]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/10" unique_id=2072467300]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 0.991272
+offset_top = -0.15055847
+offset_right = 69.99127
+offset_bottom = 68.84944
+scale = Vector2(0.16837808, 0.16837808)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "10"
+
+[node name="11" type="TextureButton" parent="TextureRect/GridContainer" unique_id=1534371481]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/11" unique_id=246652372]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 0.9913025
+offset_top = -0.15048218
+offset_right = 63.991302
+offset_bottom = 68.84952
+scale = Vector2(0.16837808, 0.16837808)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "11"
+
+[node name="12" type="TextureButton" parent="TextureRect/GridContainer" unique_id=727582529]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/12" unique_id=1986831532]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 0.991272
+offset_top = -0.15048218
+offset_right = 69.99127
+offset_bottom = 68.84952
+scale = Vector2(0.16837808, 0.16837808)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "12"
+
+[node name="13" type="TextureButton" parent="TextureRect/GridContainer" unique_id=415910176]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/13" unique_id=731807294]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 0.9913025
+offset_top = -0.15048218
+offset_right = 69.9913
+offset_bottom = 68.84952
+scale = Vector2(0.16837808, 0.16837808)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "13"
+
+[node name="14" type="TextureButton" parent="TextureRect/GridContainer" unique_id=105834777]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/14" unique_id=1929604703]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 0.9913025
+offset_top = -0.15048218
+offset_right = 69.9913
+offset_bottom = 68.84952
+scale = Vector2(0.16837808, 0.16837808)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "14"
+
+[node name="15" type="TextureButton" parent="TextureRect/GridContainer" unique_id=1313814832]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/15" unique_id=1812702472]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 1.5522461
+offset_top = -0.15048218
+offset_right = 70.552246
+offset_bottom = 68.84952
+scale = Vector2(0.16837808, 0.16837808)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "15"
+
+[node name="16" type="TextureButton" parent="TextureRect/GridContainer" unique_id=1040118556]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/16" unique_id=639007779]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 0.9913025
+offset_top = -0.15045166
+offset_right = 69.9913
+offset_bottom = 68.84955
+scale = Vector2(0.16837808, 0.16837808)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "16"
+
+[node name="17" type="TextureButton" parent="TextureRect/GridContainer" unique_id=1307005172]
+modulate = Color(0.9919687, 0.94165933, 0.9999996, 1)
+layout_mode = 2
+texture_normal = ExtResource("4_chg43")
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/17" unique_id=1663252126]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 0.991272
+offset_top = -0.15045166
+offset_right = 69.99127
+offset_bottom = 68.84955
+scale = Vector2(0.16837808, 0.16837808)
+theme_override_fonts/font = ExtResource("5_r77uv")
+theme_override_font_sizes/font_size = 50
+text = "17"
 
 [node name="Titulo" type="TileMapLayer" parent="TextureRect" unique_id=1599305801]
 z_index = 1
@@ -489,5 +656,8 @@ position = Vector2(1364, 231)
 scale = Vector2(4.52, 4.52)
 
 [node name="FundoCeu" parent="Desativados" unique_id=1252663915 instance=ExtResource("22_r4hmm")]
+
+[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=5509773]
+environment = SubResource("Environment_r77uv")
 
 [connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

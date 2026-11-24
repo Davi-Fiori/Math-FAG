@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bs76e8a81hjnp"]
+
+[ext_resource type="Texture2D" uid="uid://b2ss6mjb0keps" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Yellow Button/2.png" id="1_qsl5k"]
+[ext_resource type="Texture2D" uid="uid://ba4hhdwy7c1h6" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Yellow Button/3.png" id="2_syjhi"]
+[ext_resource type="Texture2D" uid="uid://cus25136jaxhv" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Yellow Button/4.png" id="3_rdlf2"]
+
+[node name="BotaoMadeira" type="TextureButton" unique_id=114814714]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.8800002, 0.8800002)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=811189137]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.19544056, 0.115440786)
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Esquerda" type="TextureRect" parent="HBoxContainer" unique_id=1891986378]
+self_modulate = Color(1, 1, 1, 0.92200005)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_qsl5k")
+
+[node name="Meio" type="TextureRect" parent="HBoxContainer" unique_id=2044553091]
+self_modulate = Color(1, 1, 1, 0.92200005)
+custom_minimum_size = Vector2(46.895, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_syjhi")
+
+[node name="Direita" type="TextureRect" parent="HBoxContainer" unique_id=117032737]
+self_modulate = Color(1, 1, 1, 0.92200005)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_rdlf2")

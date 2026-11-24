@@ -1,13 +1,19 @@
 [gd_scene format=4 uid="uid://h4hkp0pr6cbq"]
 
 [ext_resource type="Script" uid="uid://vgjbgjq0wxxd" path="res://scenes/level_5.gd" id="1_epfji"]
+[ext_resource type="PackedScene" uid="uid://dwmf0q5p7fn3y" path="res://scenes/label_relogio.tscn" id="2_cijsf"]
 [ext_resource type="Texture2D" uid="uid://bq6ypnt4mt65k" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Yellow Button/1.png" id="2_j7y2l"]
 [ext_resource type="FontFile" uid="uid://1umpmg5ya1u4" path="res://font/Silkscreen-Regular.ttf" id="3_epfji"]
 [ext_resource type="Texture2D" uid="uid://xdgqelgqoxs3" path="res://icons/Clock.png" id="4_83tf8"]
 [ext_resource type="PackedScene" uid="uid://cpsf0rvwpdcey" path="res://scenes/porta.tscn" id="6_lgfmy"]
+[ext_resource type="Texture2D" uid="uid://ubpoj0ifpamo" path="res://icons/Pause.png" id="6_mnrma"]
 [ext_resource type="PackedScene" uid="uid://cyat7mx8h5lbv" path="res://scenes/chave.tscn" id="7_5kl8g"]
+[ext_resource type="Texture2D" uid="uid://dvy5lymydm067" path="res://icons/Play.png" id="7_j5pwc"]
 [ext_resource type="Texture2D" uid="uid://22ts267b6bpq" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png" id="8_kljjn"]
+[ext_resource type="Texture2D" uid="uid://bap60kx0wy3jb" path="res://icons/List.png" id="8_nrec3"]
 [ext_resource type="Texture2D" uid="uid://b23otaffo0ahg" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="9_fqw3r"]
+[ext_resource type="PackedScene" uid="uid://badg5ne1sa02m" path="res://scenes/painel_pause.tscn" id="9_u88kh"]
+[ext_resource type="PackedScene" uid="uid://opciariygskf" path="res://scenes/char_select.tscn" id="10_jrosa"]
 [ext_resource type="Texture2D" uid="uid://bexo3nf3vg2it" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png" id="10_rd5uj"]
 [ext_resource type="PackedScene" uid="uid://fgvu33i50iqc" path="res://scenes/nuvem.tscn" id="11_t4jau"]
 [ext_resource type="PackedScene" uid="uid://tam1lpl5mxap" path="res://scenes/coqueiro_fundo_direita.tscn" id="12_7e2h5"]
@@ -20,12 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://4j4sor7hvbyj" path="res://scenes/num_11.tscn" id="19_epfji"]
 [ext_resource type="PackedScene" uid="uid://byq26tbscu08x" path="res://scenes/num_9.tscn" id="19_jblwk"]
 [ext_resource type="PackedScene" uid="uid://d053jufvepvt3" path="res://scenes/num_16.tscn" id="20_83tf8"]
-
-[sub_resource type="Environment" id="Environment_ishhe"]
-background_mode = 3
-adjustment_enabled = true
-adjustment_contrast = 1.05
-adjustment_saturation = 1.25
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nkto"]
 texture = ExtResource("8_kljjn")
@@ -614,27 +614,34 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_5xbjy")
 sources/7 = SubResource("TileSetAtlasSource_e3utc")
 
+[sub_resource type="Environment" id="Environment_ishhe"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.25
+
 [node name="Level5" type="Node2D" unique_id=1820141578]
 script = ExtResource("1_epfji")
 
-[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=453435666]
-environment = SubResource("Environment_ishhe")
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1047953914]
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=456158037]
+[node name="label_relogio" parent="HUD" unique_id=1733220363 instance=ExtResource("2_cijsf")]
+position = Vector2(1117, 65)
+scale = Vector2(3.0399902, 3.2923756)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=2093066865]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=1759010208]
 offset_left = 12.0
 offset_top = 8.0
 offset_right = 328.0
 offset_bottom = 68.0
 
-[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer" unique_id=530342254]
+[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer" unique_id=626187219]
 self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
 layout_mode = 2
 texture = ExtResource("2_j7y2l")
 expand_mode = 2
 
-[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect" unique_id=1228753765]
+[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect" unique_id=1816155406]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
@@ -649,13 +656,13 @@ theme_override_font_sizes/font_size = 49
 text = "?"
 horizontal_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1852167826]
-self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+[node name="TextureRect2" type="TextureRect" parent="HUD/HBoxContainer" unique_id=895697413]
+self_modulate = Color(0.8089983, 0.8089983, 0.80899817, 1)
 layout_mode = 2
 texture = ExtResource("2_j7y2l")
 expand_mode = 2
 
-[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect2" unique_id=1896063261]
+[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect2" unique_id=303722223]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
@@ -670,13 +677,13 @@ theme_override_font_sizes/font_size = 49
 text = "+"
 horizontal_alignment = 1
 
-[node name="TextureRect3" type="TextureRect" parent="HUD/HBoxContainer" unique_id=281111098]
-self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+[node name="TextureRect3" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1208271063]
+self_modulate = Color(0.80049086, 0.8004908, 0.8004906, 1)
 layout_mode = 2
 texture = ExtResource("2_j7y2l")
 expand_mode = 2
 
-[node name="interrogacao" type="Label" parent="HUD/HBoxContainer/TextureRect3" unique_id=191060195]
+[node name="interrogacao" type="Label" parent="HUD/HBoxContainer/TextureRect3" unique_id=1007313183]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
@@ -691,13 +698,13 @@ theme_override_font_sizes/font_size = 49
 text = "?"
 horizontal_alignment = 1
 
-[node name="TextureRect4" type="TextureRect" parent="HUD/HBoxContainer" unique_id=901968110]
-self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+[node name="TextureRect4" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1061445055]
+self_modulate = Color(0.7792914, 0.7792914, 0.7792912, 1)
 layout_mode = 2
 texture = ExtResource("2_j7y2l")
 expand_mode = 2
 
-[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect4" unique_id=619816695]
+[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect4" unique_id=1979138307]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
@@ -712,43 +719,100 @@ theme_override_font_sizes/font_size = 49
 text = "="
 horizontal_alignment = 1
 
-[node name="TextureRect5" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1723451754]
-self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+[node name="TextureRect5" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1924547841]
+self_modulate = Color(0.79199904, 0.79199916, 0.7919989, 1)
 layout_mode = 2
 texture = ExtResource("2_j7y2l")
 expand_mode = 2
 
-[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect5" unique_id=529175977]
+[node name="numero 1" type="Label" parent="HUD/HBoxContainer/TextureRect5" unique_id=663446073]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = -8.000001
-offset_right = 121.0
+offset_left = 3.0
+offset_right = 132.0
 offset_bottom = 64.0
-scale = Vector2(0.60316616, 0.7199997)
+scale = Vector2(0.52000946, 0.7199997)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_epfji")
 theme_override_font_sizes/font_size = 49
-text = "27"
+text = "27 "
 horizontal_alignment = 1
 
-[node name="relogio" type="TextureRect" parent="HUD" unique_id=1951034512]
-offset_left = 1035.0
-offset_top = 5.0
-offset_right = 1155.0
-offset_bottom = 125.0
-scale = Vector2(0.32, 0.32)
+[node name="relogio" type="TextureRect" parent="HUD" unique_id=1147230926]
+offset_left = 1042.0001
+offset_top = 77.00001
+offset_right = 1162.0001
+offset_bottom = 197.0
+scale = Vector2(0.24157733, 0.24157733)
 texture = ExtResource("4_83tf8")
 
-[node name="TimeLabel" type="Label" parent="HUD" unique_id=1387884340]
-offset_left = 1084.0
-offset_top = -4.0
-offset_right = 1124.0
-offset_bottom = 46.0
+[node name="TimeLabel" type="Label" parent="HUD" unique_id=200653241]
+offset_left = 1083.0
+offset_top = 68.0
+offset_right = 1123.0
+offset_bottom = 118.0
+scale = Vector2(0.8799902, 0.8799902)
 theme_override_fonts/font = ExtResource("3_epfji")
 theme_override_font_sizes/font_size = 38
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Menus" type="HBoxContainer" parent="HUD" unique_id=1531468405]
+process_mode = 3
+offset_left = 1033.0
+offset_top = 12.0
+offset_right = 1125.0
+offset_bottom = 52.0
+scale = Vector2(3.3295574, 3.3295574)
+
+[node name="pause" type="TextureButton" parent="HUD/Menus" unique_id=767577437]
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+layout_mode = 2
+texture_normal = ExtResource("2_j7y2l")
+
+[node name="pause_icon" type="TextureRect" parent="HUD/Menus/pause" unique_id=9236020]
+layout_mode = 0
+offset_left = 4.3691406
+offset_top = 3.1470032
+offset_right = 144.36914
+offset_bottom = 143.147
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("6_mnrma")
+
+[node name="play_icon" type="TextureRect" parent="HUD/Menus/pause" unique_id=615128512]
+visible = false
+layout_mode = 0
+offset_left = 4.805664
+offset_top = 2.703064
+offset_right = 144.80566
+offset_bottom = 142.70306
+scale = Vector2(0.035478584, 0.04749219)
+texture = ExtResource("7_j5pwc")
+
+[node name="botaomenu" type="TextureButton" parent="HUD/Menus" unique_id=1590947715]
+self_modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+layout_mode = 2
+texture_normal = ExtResource("2_j7y2l")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Menus/botaomenu" unique_id=717679544]
+layout_mode = 0
+offset_left = 3.9003096
+offset_top = 3.1474025
+offset_right = 143.90031
+offset_bottom = 143.1474
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("8_nrec3")
+
+[node name="Painel_pause" parent="HUD" unique_id=1578342202 instance=ExtResource("9_u88kh")]
+visible = false
+
+[node name="CharSelect" parent="HUD" unique_id=1033045445 instance=ExtResource("10_jrosa")]
+visible = false
+offset_left = -389.0
+offset_top = -17.0
+offset_right = -389.0
+offset_bottom = -17.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1493917879]
 wait_time = 90.0
@@ -843,7 +907,7 @@ tile_set = SubResource("TileSet_4nkto")
 
 [node name="Numeros" type="Node" parent="." unique_id=160124205]
 
-[node name="num11" parent="Numeros" unique_id=1733220363 instance=ExtResource("19_epfji")]
+[node name="num11" parent="Numeros" unique_id=2029509084 instance=ExtResource("19_epfji")]
 position = Vector2(-161, -41)
 
 [node name="num16" parent="Numeros" unique_id=1001896829 instance=ExtResource("20_83tf8")]
@@ -854,3 +918,6 @@ position = Vector2(-17, 12)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=700773447]
 position = Vector2(43, -7)
+
+[node name="Saturacao" type="WorldEnvironment" parent="." unique_id=453435666]
+environment = SubResource("Environment_ishhe")

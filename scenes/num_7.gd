@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var value: int = 7 
+@export var value: int = 7
 
 func _ready():
 	# This automatically adds every number to a group called "numbers"
@@ -8,8 +8,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		# Tells the level what number was grabbed
 		get_tree().current_scene.check_answer(value)
 		
-		# Deletes this specific number from the screen instantly
+		# --- FIXED: Delete this specific number immediately! ---
 		queue_free()
